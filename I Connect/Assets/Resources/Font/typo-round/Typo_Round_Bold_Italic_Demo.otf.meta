@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: d8abf8dd8247a8343b0b10f52b6ddc4f
+timeCreated: 1502717660
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Typo Round
+  fontNames:
+  - Typo Round
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9d318475c2d35d5478b835cb5f4ce259, type: 3}
+  - {fileID: 12800000, guid: 638ce2e637a649d48a2c22c78ed59512, type: 3}
+  - {fileID: 12800000, guid: 99d6735e048f8ab418d5c52476c89912, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

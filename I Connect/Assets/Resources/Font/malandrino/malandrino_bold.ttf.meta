@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: d3a3e3d46c651b94888d34d7e64771c7
+timeCreated: 1502717660
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Malandrino
+  fontNames:
+  - Malandrino
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 13d2f6b475029e14cb4a6688f639f02b, type: 3}
+  - {fileID: 12800000, guid: a11a59cb00ae0de45803b087891d79bd, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
