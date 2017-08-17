@@ -66,7 +66,7 @@ MonoBehaviour:
     width: 15
     angle: 0
     isFold: 0
-  m_width: 10
+  m_width: 0.2
   eachWidth: 1
   useRayCastFilter: 0
   useAngle: 0
