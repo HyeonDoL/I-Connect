@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Loading : MonoBehaviour
 {
-    private readonly float minimumTime = 2f;
+    [SerializeField]
+    private float minimumTime = 2f;
 
     [SerializeField]
     private Image loadingBar;
@@ -33,11 +34,11 @@ public class Loading : MonoBehaviour
         asyncOperation = SceneManager.LoadSceneAsync(sceneName);
         asyncOperation.allowSceneActivation = false;
 
-        if(!isDone)
+        if (!isDone)
         {
             isDone = true;
 
-            while(asyncOperation.progress < 0.9f)
+            while (asyncOperation.progress < 0.9f)
             {
                 loadingBar.fillAmount = asyncOperation.progress;   // asyncOperation.progress는 로딩 진척율 0~1
 
