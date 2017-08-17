@@ -57,6 +57,11 @@ public class CurveLine : MonoBehaviour
         return lineRenderer.GetPosition(3);
     }
 
+    public Vector2 GetPoint(int index)
+    {
+        return lineRenderer.GetPosition(index);
+    }
+
     public void ClearLine()
     {
         for(int i = 0; i < 4; i++)
