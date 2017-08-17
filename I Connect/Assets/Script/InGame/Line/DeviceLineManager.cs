@@ -5,13 +5,21 @@ using UnityEngine;
 public class DeviceLineManager : MonoBehaviour
 {
     [SerializeField]
-    private CurveLine curveLine;
+    private UIMeshLine line;
+
+    [SerializeField]
+    private MeshLineManager lineManager;
 
     void OnMouseDown()
     {
-        curveLine.isDrag = true;
+        Vector2 objectPosition = Camera.main.WorldToViewportPoint(transform.position);
 
-        curveLine.SetStartPoint((Vector2)transform.position);
+        Vector2 position = new Vector2((objectPosition.x - 0.5f) * Screen.width, (objectPosition.y - 0.5f) * Screen.height);
+
+        line.SetPointPosition(0, position);
+        line.SetPointPosition(1, position);
+
+        line.lengthRatio = 1f;
     }
 
     void OnMouseUp()
@@ -22,12 +30,28 @@ public class DeviceLineManager : MonoBehaviour
         if(hit.transform != null)
         {
             if (hit.collider.CompareTag("Device"))
-                curveLine.SetEndPoint((Vector2)hit.transform.position);
+            {
+                Vector2 objectPosition = Camera.main.WorldToViewportPoint((Vector2)hit.transform.position);
+
+                Vector2 position = new Vector2((objectPosition.x - 0.5f) * Screen.width, (objectPosition.y - 0.5f) * Screen.height);
+
+                line.SetPointPosition(1, position);
+
+                lineManager.connect(line);
+            }
         }
-
         else
-            curveLine.ClearLine();
+        {
+            lineManager.Clear(line);
+        }
+    }
 
-        curveLine.isDrag = false;
+    void OnMouseDrag()
+    {
+        Vector2 mousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+
+        Vector2 position = new Vector2((mousePosition.x - 0.5f) * Screen.width, (mousePosition.y - 0.5f) * Screen.height);
+
+        line.SetPointPosition(1, position);
     }
 }

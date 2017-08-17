@@ -25,12 +25,22 @@ public class MenuControl : MonoBehaviour
 
     public void Toggle()
     {
-        if(isOpen)
-            StartCoroutine(Tween.TweenTransform.Position(menuTrans, closeTrans.position, controlTime));
+        if (isOpen)
+            Close();
 
         else
-            StartCoroutine(Tween.TweenTransform.Position(menuTrans, openTrans.position, controlTime));
+            Open();
 
         isOpen = !isOpen;
+    }
+
+    public void Open()
+    {
+        StartCoroutine(Tween.TweenTransform.Position(menuTrans, openTrans.position, controlTime));
+    }
+
+    public void Close()
+    {
+        StartCoroutine(Tween.TweenTransform.Position(menuTrans, closeTrans.position, controlTime));
     }
 }
