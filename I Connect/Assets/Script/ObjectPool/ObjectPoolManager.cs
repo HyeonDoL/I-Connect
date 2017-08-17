@@ -11,6 +11,7 @@ public enum ObjectPoolType
 public struct PoolInfo
 {
     public GameObject pool;
+    public Transform group;
     public int count;
     public ObjectPoolType type;
 }
@@ -58,10 +59,7 @@ public class ObjectPoolManager : MonoBehaviour
 
             objectPoolList[infoList[count].type.ToString()] = objectPool;
 
-            GameObject group = new GameObject();
-            group.name = infoList[count].pool.name;
-            group.transform.parent = this.transform;
-            objectPool.Group = group;
+            objectPool.Group = infoList[count].group.gameObject;
 
             int poolCount = defaultCount;
 
@@ -73,7 +71,7 @@ public class ObjectPoolManager : MonoBehaviour
                 GameObject clone = Instantiate(objectPool.Prefab);
                 clone.SetActive(false);
                 clone.name = infoList[count].type.ToString();
-                clone.transform.parent = group.transform;
+                clone.transform.parent = infoList[count].group;
 
                 objectPool.UnusedList.Add(clone);
 
@@ -108,6 +106,7 @@ public class ObjectPoolManager : MonoBehaviour
 
         obj.transform.position = startPosition;
         obj.transform.rotation = Quaternion.identity;
+        obj.transform.localScale = Vector3.one;
 
         return obj;
     }

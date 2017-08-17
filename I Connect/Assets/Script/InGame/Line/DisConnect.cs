@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class DisConnect : MonoBehaviour
 {
-    [SerializeField]
-    private MeshLineManager lineManager;
-
     private UIMeshLine meshLine1;
     private UIMeshLine meshLine2;
 
@@ -21,9 +18,9 @@ public class DisConnect : MonoBehaviour
 
     public void DisConnecting()
     {
-        lineManager.Clear(meshLine1);
-        lineManager.Clear(meshLine2);
+        MeshLineManager.Instance.Clear(meshLine1);
+        MeshLineManager.Instance.Clear(meshLine2);
 
-        this.gameObject.SetActive(false);
+        ObjectPoolManager.Instance.Free(this.gameObject);
     }
 }

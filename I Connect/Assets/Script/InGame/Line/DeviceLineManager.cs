@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class DeviceLineManager : MonoBehaviour
 {
-    [SerializeField]
     private UIMeshLine line;
-
-    [SerializeField]
-    private MeshLineManager lineManager;
 
     void OnMouseDown()
     {
+        line = ObjectPoolManager.Instance.GetObject(ObjectPoolType.Line, Vector3.zero).GetComponent<UIMeshLine>();
+
         Vector2 objectPosition = Camera.main.WorldToViewportPoint(transform.position);
 
         Vector2 position = new Vector2((objectPosition.x - 0.5f) * Screen.width, (objectPosition.y - 0.5f) * Screen.height);
@@ -37,12 +35,12 @@ public class DeviceLineManager : MonoBehaviour
 
                 line.SetPointPosition(1, position);
 
-                lineManager.connect(line);
+                MeshLineManager.Instance.Connect(line);
             }
         }
         else
         {
-            lineManager.Clear(line);
+            MeshLineManager.Instance.Clear(line);
         }
     }
 
