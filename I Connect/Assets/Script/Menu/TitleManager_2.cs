@@ -92,5 +92,9 @@ public class TitleManager_2 : MonoBehaviour
         {
             StartCoroutine(Tween.TweenTransform.Position(Names[i].transform, defaultPosition[i], 0.5f));
         }
+
+        yield return new WaitForSeconds(1.0f);
+
+        SceneChanger.Instance.ChangeScene(SceneType.Menu);
     }
 }
