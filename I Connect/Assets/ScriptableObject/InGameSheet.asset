@@ -14,101 +14,153 @@ MonoBehaviour:
   m_data:
   - maxComplete: 2
     checkMenu:
-      connector: 0
-      crossCable: 0
-      cutter: 0
-      direct: 0
-      label: 0
+      connection: 1
+      straightThroughConnection: 0
+      crossOverConnection: 1
+      disconnection: 0
+      _switch: 1
       router: 0
-      setting: 0
-      _switch: 0
+      accessPoint: 1
+      hotspot: 0
+      ipTag: 1
+      accessListTag: 0
+      vlanTag: 1
+      powerSwitch: 1
+    path:
+    - start: 
+      end: 
   - maxComplete: 3
     checkMenu:
-      connector: 0
-      crossCable: 0
-      cutter: 0
-      direct: 0
-      label: 0
-      router: 0
-      setting: 0
+      connection: 0
+      straightThroughConnection: 0
+      crossOverConnection: 0
+      disconnection: 0
       _switch: 0
+      router: 0
+      accessPoint: 0
+      hotspot: 0
+      ipTag: 0
+      accessListTag: 0
+      vlanTag: 0
+      powerSwitch: 0
+    path: []
   - maxComplete: 3
     checkMenu:
-      connector: 0
-      crossCable: 0
-      cutter: 0
-      direct: 0
-      label: 0
-      router: 0
-      setting: 0
+      connection: 0
+      straightThroughConnection: 0
+      crossOverConnection: 0
+      disconnection: 0
       _switch: 0
+      router: 0
+      accessPoint: 0
+      hotspot: 0
+      ipTag: 0
+      accessListTag: 0
+      vlanTag: 0
+      powerSwitch: 0
+    path: []
   - maxComplete: 3
     checkMenu:
-      connector: 0
-      crossCable: 0
-      cutter: 0
-      direct: 0
-      label: 0
-      router: 0
-      setting: 0
+      connection: 0
+      straightThroughConnection: 0
+      crossOverConnection: 0
+      disconnection: 0
       _switch: 0
+      router: 0
+      accessPoint: 0
+      hotspot: 0
+      ipTag: 0
+      accessListTag: 0
+      vlanTag: 0
+      powerSwitch: 0
+    path: []
   - maxComplete: 3
     checkMenu:
-      connector: 0
-      crossCable: 0
-      cutter: 0
-      direct: 0
-      label: 0
-      router: 0
-      setting: 0
+      connection: 0
+      straightThroughConnection: 0
+      crossOverConnection: 0
+      disconnection: 0
       _switch: 0
+      router: 0
+      accessPoint: 0
+      hotspot: 0
+      ipTag: 0
+      accessListTag: 0
+      vlanTag: 0
+      powerSwitch: 0
+    path: []
   - maxComplete: 3
     checkMenu:
-      connector: 0
-      crossCable: 0
-      cutter: 0
-      direct: 0
-      label: 0
-      router: 0
-      setting: 0
+      connection: 0
+      straightThroughConnection: 0
+      crossOverConnection: 0
+      disconnection: 0
       _switch: 0
+      router: 0
+      accessPoint: 0
+      hotspot: 0
+      ipTag: 0
+      accessListTag: 0
+      vlanTag: 0
+      powerSwitch: 0
+    path: []
   - maxComplete: 3
     checkMenu:
-      connector: 0
-      crossCable: 0
-      cutter: 0
-      direct: 0
-      label: 0
-      router: 0
-      setting: 0
+      connection: 0
+      straightThroughConnection: 0
+      crossOverConnection: 0
+      disconnection: 0
       _switch: 0
+      router: 0
+      accessPoint: 0
+      hotspot: 0
+      ipTag: 0
+      accessListTag: 0
+      vlanTag: 0
+      powerSwitch: 0
+    path: []
   - maxComplete: 3
     checkMenu:
-      connector: 0
-      crossCable: 0
-      cutter: 0
-      direct: 0
-      label: 0
-      router: 0
-      setting: 0
+      connection: 0
+      straightThroughConnection: 0
+      crossOverConnection: 0
+      disconnection: 0
       _switch: 0
+      router: 0
+      accessPoint: 0
+      hotspot: 0
+      ipTag: 0
+      accessListTag: 0
+      vlanTag: 0
+      powerSwitch: 0
+    path: []
   - maxComplete: 3
     checkMenu:
-      connector: 0
-      crossCable: 0
-      cutter: 0
-      direct: 0
-      label: 0
-      router: 0
-      setting: 0
+      connection: 0
+      straightThroughConnection: 0
+      crossOverConnection: 0
+      disconnection: 0
       _switch: 0
+      router: 0
+      accessPoint: 0
+      hotspot: 0
+      ipTag: 0
+      accessListTag: 0
+      vlanTag: 0
+      powerSwitch: 0
+    path: []
   - maxComplete: 3
     checkMenu:
-      connector: 0
-      crossCable: 0
-      cutter: 0
-      direct: 0
-      label: 0
-      router: 0
-      setting: 0
+      connection: 0
+      straightThroughConnection: 0
+      crossOverConnection: 0
+      disconnection: 0
       _switch: 0
+      router: 0
+      accessPoint: 0
+      hotspot: 0
+      ipTag: 0
+      accessListTag: 0
+      vlanTag: 0
+      powerSwitch: 0
+    path: []

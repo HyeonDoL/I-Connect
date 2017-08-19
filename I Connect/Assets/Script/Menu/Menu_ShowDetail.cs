@@ -2,6 +2,7 @@
 using UnityEngine;
 using System;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 [Serializable]
 public struct StagePair
@@ -25,6 +26,9 @@ public class Menu_ShowDetail : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     [SerializeField]
     private float TargetScale;
 
+    [SerializeField]
+    private Text bottomText;
+
     private float DefaultScale;
 
     private bool isGoTarget;
@@ -45,10 +49,13 @@ public class Menu_ShowDetail : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 
         isGoTarget = false;
     }
+
     public void OnSelect()
     {
-        StartCoroutine(GoTargetPosition());
+        if(!isGoTarget)
+            StartCoroutine(FadeText());
 
+        StartCoroutine(GoTargetPosition());
     }
     private IEnumerator ScaleUp()
     {
@@ -78,6 +85,31 @@ public class Menu_ShowDetail : MonoBehaviour, IDragHandler, IPointerUpHandler, I
         isGoTarget = true;
 
         yield return null;
+    }
+
+    private IEnumerator FadeText()
+    {
+        yield return StartCoroutine(_FadeText(0f, 0.5f));
+
+        bottomText.text = "Connecting to Start";
+
+        yield return StartCoroutine(_FadeText(1f, 0.5f));
+    }
+    private IEnumerator _FadeText(float alpha, float time)
+    {
+        float t = 0;
+
+        Color startColor = bottomText.color;
+        Color endColor = new Color(bottomText.color.r, bottomText.color.g, bottomText.color.b, alpha);
+
+        while(t < 1f)
+        {
+            t += Time.deltaTime / time;
+
+            bottomText.color = Color.Lerp(startColor, endColor, t);
+
+            yield return null;
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)

@@ -24,6 +24,9 @@ public class MenuScroll : MonoBehaviour, IDragHandler, IPointerUpHandler
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (!GameManager.Instance.IsCanTouch)
+            return;
+
         float positionX = Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
                                                 closeTrans.position.x, 
                                                 openTrans.position.x);
@@ -33,6 +36,9 @@ public class MenuScroll : MonoBehaviour, IDragHandler, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        if (!GameManager.Instance.IsCanTouch)
+            return;
+
         float mousePositionX = (Camera.main.ScreenToViewportPoint(Input.mousePosition) * Screen.width).x;
 
         float positionX = Mathf.Clamp(mousePositionX, closeTrans.anchoredPosition.x, openTrans.anchoredPosition.x);

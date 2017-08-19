@@ -25,6 +25,9 @@ public class DeviceLineManager : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (!GameManager.Instance.IsCanTouch)
+            return;
+
         line = ObjectPoolManager.Instance.GetObject(ObjectPoolType.Line, Vector3.zero).GetComponent<UIMeshLine>();
 
         Vector2 objectPosition = Camera.main.WorldToViewportPoint(transform.position);
@@ -39,6 +42,9 @@ public class DeviceLineManager : MonoBehaviour
 
     void OnMouseUp()
     {
+        if (!GameManager.Instance.IsCanTouch)
+            return;
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 100.0f);
 
@@ -113,6 +119,9 @@ public class DeviceLineManager : MonoBehaviour
 
     void OnMouseDrag()
     {
+        if (!GameManager.Instance.IsCanTouch)
+            return;
+
         Vector2 mousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
         Vector2 position = new Vector2((mousePosition.x - 0.5f) * 1600, (mousePosition.y - 0.5f) * 900);

@@ -17,7 +17,11 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this);
+
+        IsCanTouch = true;
     }
 
     public int StageLv { set; get; }
+
+    public bool IsCanTouch { set; get; }
 }

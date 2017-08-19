@@ -6,7 +6,6 @@ public enum MaxLineForType
     Router = 3,
     Switch = 5,
     AP = 99
-
 }
 public class LimitMaxLine : MonoBehaviour
 {

@@ -2,8 +2,15 @@
 
 public class StageControl : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject pauseWindow;
+
     public void Restart()
     {
+        GameManager.Instance.IsCanTouch = true;
+
+        Time.timeScale = 1;
+
         SceneChanger.Instance.ChangeScene(SceneType.InGame);
     }
 
@@ -23,6 +30,28 @@ public class StageControl : MonoBehaviour
 
     public void ReturnMenu()
     {
+        GameManager.Instance.IsCanTouch = true;
+
+        Time.timeScale = 1;
+
         SceneChanger.Instance.ChangeScene(SceneType.Menu);
+    }
+
+    public void Pause()
+    {
+        GameManager.Instance.IsCanTouch = false;
+
+        pauseWindow.SetActive(true);
+
+        Time.timeScale = 0;
+    }
+
+    public void ExitPause()
+    {
+        GameManager.Instance.IsCanTouch = true;
+
+        pauseWindow.SetActive(false);
+
+        Time.timeScale = 1;
     }
 }

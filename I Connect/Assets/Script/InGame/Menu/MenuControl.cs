@@ -25,6 +25,9 @@ public class MenuControl : MonoBehaviour
 
     public void Toggle()
     {
+        if (!GameManager.Instance.IsCanTouch)
+            return;
+
         if (isOpen)
             Close();
 
