@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioClipContainer : MonoBehaviour
 {
+
     [SerializeField]
     private AudioClip[] m_Clips;
 
@@ -13,5 +14,9 @@ public class AudioClipContainer : MonoBehaviour
         {
             return m_Clips[index];
         }
+    }
+    void Awake()
+    {
+        AudioManager.Instance.audioClipContainer_readonly = this;
     }
 }
