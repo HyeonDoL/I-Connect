@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class DeviceLineManager : MonoBehaviour
 {
-    [SerializeField]
-    private ParticleSystem connectParticle;
-
     private List<Vector2> connectedPositionList = new List<Vector2>();
 
     private UIMeshLine line;
 
+    private ParticleSystem connectParticle;
+
     public List<Vector2> ConnectedPositionList()
     {
         return connectedPositionList;
+    }
+
+    private void Awake()
+    {
+        connectParticle = InGameManager.Instance.GetConnectParticle();
     }
 
     void OnMouseDown()

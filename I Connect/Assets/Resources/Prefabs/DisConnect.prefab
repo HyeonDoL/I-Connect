@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114867282985036352}
   - component: {fileID: 114124391431262184}
   m_Layer: 5
-  m_Name: DisConnectButton
+  m_Name: DisConnect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
