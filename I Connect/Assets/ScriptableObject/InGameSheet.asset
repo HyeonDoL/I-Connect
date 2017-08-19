@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cce5bd6ed4fdab45aecb6b80e45e75e, type: 3}
+  m_Name: InGameSheet
+  m_EditorClassIdentifier: 
+  m_data:
+  - maxComplete: 2
+    checkMenu:
+      connector: 0
+      crossCable: 0
+      cutter: 0
+      direct: 0
+      label: 0
+      router: 0
+      setting: 0
+      _switch: 0
+  - maxComplete: 3
+    checkMenu:
+      connector: 0
+      crossCable: 0
+      cutter: 0
+      direct: 0
+      label: 0
+      router: 0
+      setting: 0
+      _switch: 0
