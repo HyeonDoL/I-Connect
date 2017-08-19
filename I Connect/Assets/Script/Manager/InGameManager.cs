@@ -24,6 +24,12 @@ public class InGameManager : MonoBehaviour
     [SerializeField]
     private Text lvText;
 
+    [SerializeField]
+    private ParticleSystem connectParticle;
+
+    [SerializeField]
+    private GameManager[] LvList;
+
     private int maxCompleteCount;
     private int completeCount;
 
@@ -54,5 +60,10 @@ public class InGameManager : MonoBehaviour
     public void Success()
     {
         clearWindow.SetActive(true);
+    }
+
+    public ParticleSystem GetConnectParticle()
+    {
+        return connectParticle;
     }
 }
