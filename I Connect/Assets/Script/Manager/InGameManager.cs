@@ -19,10 +19,7 @@ public class InGameManager : MonoBehaviour
     private GameObject clearWindow;
 
     [SerializeField]
-    private CompleteSheet completeSheet;
-
-    [SerializeField]
-    private Text lvText;
+    private InGameSheet inGameSheet;
 
     [SerializeField]
     private ParticleSystem connectParticle;
@@ -39,9 +36,7 @@ public class InGameManager : MonoBehaviour
 
         completeCount = 0;
 
-        maxCompleteCount = completeSheet.m_data[GameManager.Instance.StageLv - 1].maxCompleteCount;
-
-        lvText.text = "Lv : " + GameManager.Instance.StageLv.ToString();
+        maxCompleteCount = inGameSheet.m_data[GameManager.Instance.StageLv - 1].maxComplete;
 
         LvList[GameManager.Instance.StageLv - 1].SetActive(true);
     }

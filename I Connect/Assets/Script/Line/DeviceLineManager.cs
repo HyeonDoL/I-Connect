@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DeviceLineManager : MonoBehaviour
 {
+    [SerializeField]
+    private LimitMaxLine maxLine;
+
     private List<Vector2> connectedPositionList = new List<Vector2>();
 
     private UIMeshLine line;
@@ -43,6 +46,7 @@ public class DeviceLineManager : MonoBehaviour
         {
             if (hit.collider.CompareTag("Device"))
             {
+                #region Exception
                 List<Vector2> targetConnectedList = hit.transform.GetComponent<DeviceLineManager>().ConnectedPositionList();
 
                 for(int  i = 0; i < connectedPositionList.Count; i++)
@@ -65,11 +69,13 @@ public class DeviceLineManager : MonoBehaviour
 
                 LimitMaxLine lineLimit = hit.transform.GetComponent<LimitMaxLine>();
 
-                if (!lineLimit.IsCanConnect || hit.transform.position == this.transform.position)
+                if (!lineLimit.IsCanConnect|| !maxLine.IsCanConnect || hit.transform.position == this.transform.position)
                 {
                     MeshLineManager.Instance.Clear(line);
                     return;
                 }
+
+                #endregion
 
                 connectedPositionList.Add(hit.transform.position);
 
@@ -80,9 +86,16 @@ public class DeviceLineManager : MonoBehaviour
                 line.SetPointPosition(1, position);
 
                 lineLimit.Connect();
-                MeshLineManager.Instance.Connect(line, lineLimit, connectedPositionList);
+                maxLine.Connect();
+
+                MeshLineManager.Instance.Connect(line, maxLine, lineLimit, connectedPositionList);
 
                 if (lineLimit.GetDeviceType() == MaxLineForType.EndDevice)
+                {
+                    InGameManager.Instance.Complete();
+                }
+
+                if(maxLine.GetDeviceType() == MaxLineForType.EndDevice)
                 {
                     InGameManager.Instance.Complete();
                 }

@@ -7,6 +7,7 @@ public class DisConnect : MonoBehaviour
     private List<Vector2> currentPositionList;
 
     private LimitMaxLine currentDevice;
+    private LimitMaxLine thisDevice;
 
     private UIMeshLine meshLine;
     private UIMeshLine duplicationMeshLine;
@@ -22,6 +23,10 @@ public class DisConnect : MonoBehaviour
     public void SetCurrentDevice(LimitMaxLine device)
     {
         currentDevice = device;
+    }
+    public void SetThisDevice(LimitMaxLine device)
+    {
+        thisDevice = device;
     }
     public void SetCurrentPositionList(List<Vector2> list)
     {
@@ -40,9 +45,13 @@ public class DisConnect : MonoBehaviour
             if(currentDevice.GetDeviceType() == MaxLineForType.EndDevice)
                 InGameManager.Instance.DisConnect();
 
+            if (thisDevice.GetDeviceType() == MaxLineForType.EndDevice)
+                InGameManager.Instance.DisConnect();
+
             currentPositionList.Remove(currentPosition);
 
             currentDevice.DisConnect();
+            thisDevice.DisConnect();
         }
         ObjectPoolManager.Instance.Free(this.gameObject);
     }
