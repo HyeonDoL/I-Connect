@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class InGameManager : MonoBehaviour
 {
@@ -14,8 +15,44 @@ public class InGameManager : MonoBehaviour
         }
     }
 
+    [SerializeField]
+    private GameObject clearWindow;
+
+    [SerializeField]
+    private CompleteSheet completeSheet;
+
+    [SerializeField]
+    private Text lvText;
+
+    private int maxCompleteCount;
+    private int completeCount;
+
     private void Awake()
     {
         instance = this;
+
+        completeCount = 0;
+
+        maxCompleteCount = completeSheet.m_data[GameManager.Instance.StageLv - 1].maxCompleteCount;
+
+        lvText.text = "Lv : " + GameManager.Instance.StageLv.ToString();
+    }
+
+    public void DisConnect()
+    {
+        completeCount -= 1;
+    }
+
+    public void Complete()
+    {
+        completeCount += 1;
+
+        if (completeCount >= maxCompleteCount)
+            Success();
+    }
+
+    public void Success()
+    {
+        clearWindow.SetActive(true);
     }
 }

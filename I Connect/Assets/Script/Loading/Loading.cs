@@ -6,10 +6,7 @@ using UnityEngine.UI;
 public class Loading : MonoBehaviour
 {
     [SerializeField]
-    private float minimumTime = 2f;
-
-    [SerializeField]
-    private Image loadingBar;
+    private float minimumTime = 3f;
 
     private bool isDone = false;
     private float time = 0f;
@@ -23,7 +20,7 @@ public class Loading : MonoBehaviour
     private void Update()
     {
         time += Time.deltaTime;
-        loadingBar.fillAmount = time;
+        //loadingBar.fillAmount = time;
 
         if (time >= minimumTime)
             asyncOperation.allowSceneActivation = true;
@@ -40,7 +37,7 @@ public class Loading : MonoBehaviour
 
             while (asyncOperation.progress < 0.9f)
             {
-                loadingBar.fillAmount = asyncOperation.progress;   // asyncOperation.progress는 로딩 진척율 0~1
+                //loadingBar.fillAmount = asyncOperation.progress;   // asyncOperation.progress는 로딩 진척율 0~1
 
                 yield return null;
             }
