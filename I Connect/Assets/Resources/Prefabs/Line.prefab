@@ -106,6 +106,7 @@ MonoBehaviour:
   roundEdge: 1
   roundEdgePolygonCount: 23
   m_lengthRatio: 1
+  isUsingOnMenu: 0
 --- !u!222 &222625588282807892
 CanvasRenderer:
   m_ObjectHideFlags: 1

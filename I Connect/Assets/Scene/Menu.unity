@@ -172,7 +172,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2078712161}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -252,7 +252,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061034996, y: 200}
+  m_AnchoredPosition: {x: 0.000061035156, y: 200}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &208506527
@@ -277,6 +277,8 @@ MonoBehaviour:
   accuracy: 0.01
   TargetScale: 0.95
   bottomText: {fileID: 26633273}
+  myRect: {fileID: 1092992536}
+  CanvasRect: {fileID: 2078712161}
 --- !u!114 &208506528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,7 +486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000091552996, y: 0}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 700, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418074394
@@ -509,6 +511,8 @@ MonoBehaviour:
   accuracy: 0.01
   TargetScale: 0.95
   bottomText: {fileID: 26633273}
+  myRect: {fileID: 1092992536}
+  CanvasRect: {fileID: 2078712161}
 --- !u!114 &418074395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -834,6 +838,8 @@ MonoBehaviour:
   accuracy: 0.01
   TargetScale: 0.95
   bottomText: {fileID: 26633273}
+  myRect: {fileID: 1092992536}
+  CanvasRect: {fileID: 2078712161}
 --- !u!114 &638891412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1230,12 +1236,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2078712161}
-  m_RootOrder: 3
+  m_Father: {fileID: 1510608472}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -3200.0002, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1012925659
@@ -1343,6 +1349,7 @@ GameObject:
   - component: {fileID: 1092992536}
   - component: {fileID: 1092992535}
   - component: {fileID: 1092992534}
+  - component: {fileID: 1092992537}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -1444,6 +1451,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1092992537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1092992532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee47f3fed37b4b4fbbc2d944d8df102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Displayer: {fileID: 1092992536}
+  value: {x: 0, y: 0}
 --- !u!1 &1181019113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,7 +1566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 22.5}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00049052585, y: 0}
+  m_AnchoredPosition: {x: 0.00048828125, y: 0}
   m_SizeDelta: {x: 700, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1196469433
@@ -1571,6 +1591,8 @@ MonoBehaviour:
   accuracy: 0.01
   TargetScale: 0.95
   bottomText: {fileID: 26633273}
+  myRect: {fileID: 1092992536}
+  CanvasRect: {fileID: 2078712161}
 --- !u!114 &1196469434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1854,9 +1876,9 @@ RectTransform:
   m_Father: {fileID: 1003524456}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -348, y: 14}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 452, y: 14}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1444715890
@@ -1879,6 +1901,8 @@ MonoBehaviour:
   accuracy: 0.01
   TargetScale: 0.95
   bottomText: {fileID: 26633273}
+  myRect: {fileID: 1092992536}
+  CanvasRect: {fileID: 2078712161}
 --- !u!114 &1444715891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2135,6 +2159,7 @@ RectTransform:
   - {fileID: 390295376}
   - {fileID: 301520686}
   - {fileID: 9034083}
+  - {fileID: 1007814551}
   m_Father: {fileID: 1528053525}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2875,7 +2900,6 @@ RectTransform:
   - {fileID: 960982283}
   - {fileID: 1092992533}
   - {fileID: 1531475714}
-  - {fileID: 1007814551}
   - {fileID: 26633272}
   m_Father: {fileID: 0}
   m_RootOrder: 1

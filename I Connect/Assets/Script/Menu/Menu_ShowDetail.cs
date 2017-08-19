@@ -32,6 +32,9 @@ public class Menu_ShowDetail : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     [SerializeField]
     private ScrollRect myRect;
 
+    [SerializeField]
+    private RectTransform CanvasRect;
+
     private float DefaultScale;
 
     private bool isGoTarget;
@@ -39,6 +42,22 @@ public class Menu_ShowDetail : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     private RectTransform myTransform;
 
     private UIMeshLine line;
+
+    private Vector2 spaceSupportModuler;
+    private Vector2 SpaceSupportModuler
+    {
+        set
+        {
+            spaceSupportModuler = new Vector2
+                (value.x * CanvasRect.rect.width - CanvasRect.rect.width * 0.5f,
+                value.y * CanvasRect.rect.height - CanvasRect.rect.height * 0.5f);
+        }
+        get
+        {
+            return spaceSupportModuler;
+        }
+    }
+
 
     private void Awake()
     {
@@ -121,11 +140,8 @@ public class Menu_ShowDetail : MonoBehaviour, IDragHandler, IPointerUpHandler, I
             return;
 
         line = ObjectPoolManager.Instance.GetObject(ObjectPoolType.Line, Vector3.zero).GetComponent<UIMeshLine>();
-
-        Vector2 objectPosition = myTransform.localPosition;
-        Debug.Log("myRect.normalizedPosition.x : "+ myRect.normalizedPosition.x);
-        Vector2 position = new Vector2(objectPosition.x - (8000 * myRect.normalizedPosition.x), (objectPosition.y )) ;
-
+        SpaceSupportModuler = Camera.main.WorldToViewportPoint(new Vector3(myTransform.position.x, myTransform.position.y, 0));
+        Vector2 position = SpaceSupportModuler;
         line.SetPointPosition(0, position);
         line.SetPointPosition(1, position);
 
@@ -136,11 +152,9 @@ public class Menu_ShowDetail : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     {
         if (!isGoTarget)
             return;
-
-        Vector2 mousePosition = Camera.main.ScreenToViewportPoint( Input.mousePosition);
-
-        Vector2 position = new Vector2((mousePosition.x )*1600 -800f , (mousePosition.y )*900 - 450f);
-
+        
+        SpaceSupportModuler = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        Vector2 position = SpaceSupportModuler;
         line.SetPointPosition(1, position);
     }
 
@@ -156,10 +170,8 @@ public class Menu_ShowDetail : MonoBehaviour, IDragHandler, IPointerUpHandler, I
         {
             if (hit.collider.CompareTag("Device"))
             {
-                Vector2 objectPosition = Camera.main.WorldToViewportPoint((Vector2)hit.transform.position);
-
-                Vector2 position = new Vector2((objectPosition.x - 0.5f) * 1600, (objectPosition.y - 0.5f) * 900);
-
+                SpaceSupportModuler = Camera.main.WorldToViewportPoint(hit.transform.position);
+                Vector2 position = SpaceSupportModuler;
                 line.SetPointPosition(1, position);
 
                 MeshLineManager.Instance.Connect(line);
