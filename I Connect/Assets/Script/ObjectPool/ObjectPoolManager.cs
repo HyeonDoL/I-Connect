@@ -4,7 +4,8 @@ using UnityEngine;
 public enum ObjectPoolType
 {
     Line,
-    DisConnectButton
+    DisConnectButton,
+    WirelessLines
 }
 
 [System.Serializable]

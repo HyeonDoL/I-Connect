@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioSourceContainer : MonoBehaviour 
+public class AudioSourceContainer : MonoBehaviour
 {
+
     [SerializeField]
     private AudioSource[] m_Sources;
 
@@ -15,4 +16,9 @@ public class AudioSourceContainer : MonoBehaviour
         }
     }
     public int Length { get { return m_Sources.Length; } }
+
+    void Awake()
+    {
+        AudioManager.Instance.audioSourceContainer_readonly = this;
+    }
 }
