@@ -32,11 +32,14 @@ public class InGameManager : MonoBehaviour
 
     public bool isCanConnect { get; set; }
 
+    public bool isClickButton { get; set; }
+
     private void Awake()
     {
         instance = this;
 
         isCanConnect = false;
+        isClickButton = false;
 
         completeCount = 0;
 
