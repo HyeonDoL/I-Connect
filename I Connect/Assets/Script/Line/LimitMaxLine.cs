@@ -36,8 +36,6 @@ public class LimitMaxLine : MonoBehaviour
 
         if (lineCount >= maxLine)
             IsCanConnect = false;
-
-        Debug.Log(IsCanConnect);
     }
 
     public void DisConnect()

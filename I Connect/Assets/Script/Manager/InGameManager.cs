@@ -63,4 +63,9 @@ public class InGameManager : MonoBehaviour
     {
         return connectParticle;
     }
+
+    public InGameData GetInGameData(int index)
+    {
+        return inGameSheet.m_data[index];
+    }
 }

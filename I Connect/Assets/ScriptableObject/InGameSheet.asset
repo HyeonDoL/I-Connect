@@ -32,3 +32,83 @@ MonoBehaviour:
       router: 0
       setting: 0
       _switch: 0
+  - maxComplete: 3
+    checkMenu:
+      connector: 0
+      crossCable: 0
+      cutter: 0
+      direct: 0
+      label: 0
+      router: 0
+      setting: 0
+      _switch: 0
+  - maxComplete: 3
+    checkMenu:
+      connector: 0
+      crossCable: 0
+      cutter: 0
+      direct: 0
+      label: 0
+      router: 0
+      setting: 0
+      _switch: 0
+  - maxComplete: 3
+    checkMenu:
+      connector: 0
+      crossCable: 0
+      cutter: 0
+      direct: 0
+      label: 0
+      router: 0
+      setting: 0
+      _switch: 0
+  - maxComplete: 3
+    checkMenu:
+      connector: 0
+      crossCable: 0
+      cutter: 0
+      direct: 0
+      label: 0
+      router: 0
+      setting: 0
+      _switch: 0
+  - maxComplete: 3
+    checkMenu:
+      connector: 0
+      crossCable: 0
+      cutter: 0
+      direct: 0
+      label: 0
+      router: 0
+      setting: 0
+      _switch: 0
+  - maxComplete: 3
+    checkMenu:
+      connector: 0
+      crossCable: 0
+      cutter: 0
+      direct: 0
+      label: 0
+      router: 0
+      setting: 0
+      _switch: 0
+  - maxComplete: 3
+    checkMenu:
+      connector: 0
+      crossCable: 0
+      cutter: 0
+      direct: 0
+      label: 0
+      router: 0
+      setting: 0
+      _switch: 0
+  - maxComplete: 3
+    checkMenu:
+      connector: 0
+      crossCable: 0
+      cutter: 0
+      direct: 0
+      label: 0
+      router: 0
+      setting: 0
+      _switch: 0
