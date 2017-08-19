@@ -952,14 +952,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.44852942, b: 0.44852942, a: 1}
+  m_Color: {r: 0.88235295, g: 0.7935807, b: 0.6812284, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e1c8b1b26cde77c4d92de38a8c7d4f19, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9859411b4d82cfb4faf5778667dcd74b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1080,13 +1080,12 @@ GameObject:
   - component: {fileID: 1444715892}
   - component: {fileID: 1444715891}
   - component: {fileID: 1444715890}
-  - component: {fileID: 1444715894}
   m_Layer: 5
   m_Name: MainImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &1444715889
 RectTransform:
@@ -1167,14 +1166,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1544118, g: 0.1544118, b: 0.1544118, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.591}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1d315f76b84c4a742b7425026c02bc8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf30fdf2386fb6f41a85a7e1fde85587, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1188,18 +1187,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1444715888}
---- !u!114 &1444715894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1444715888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3f507bdb17462743a0dcef6c44fbd68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  connectParticle: {fileID: 0}
 --- !u!1 &1467086303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,14 +1329,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.30882353, g: 1, b: 0.7997971, a: 1}
+  m_Color: {r: 0.7307526, g: 0.8218828, b: 0.9117647, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e1c8b1b26cde77c4d92de38a8c7d4f19, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9859411b4d82cfb4faf5778667dcd74b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1603,14 +1590,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.08088237, g: 1, b: 0.35344827, a: 1}
+  m_Color: {r: 1, g: 0.8455882, b: 0.9701825, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e1c8b1b26cde77c4d92de38a8c7d4f19, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9859411b4d82cfb4faf5778667dcd74b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1671,14 +1658,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9878297, g: 0.11764705, b: 1, a: 1}
+  m_Color: {r: 0.7389706, g: 0.9852941, b: 0.9445233, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e1c8b1b26cde77c4d92de38a8c7d4f19, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9859411b4d82cfb4faf5778667dcd74b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
