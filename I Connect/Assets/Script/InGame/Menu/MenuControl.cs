@@ -28,6 +28,8 @@ public class MenuControl : MonoBehaviour
         if (!GameManager.Instance.IsCanTouch)
             return;
 
+        InGameManager.Instance.isClickButton = true;
+
         if (isOpen)
             Close();
 
