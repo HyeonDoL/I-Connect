@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_data:
   - maxCompleteCount: 2
+  - maxCompleteCount: 3
