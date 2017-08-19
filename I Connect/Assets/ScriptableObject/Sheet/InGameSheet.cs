@@ -17,18 +17,25 @@ public class InGameData
     [Serializable]
     public struct CheckInGameMenu
     {
-        public bool connection;
-        public bool straightThroughConnection;
-        public bool crossOverConnection;
-        public bool disconnection;
-        public bool _switch;
-        public bool router;
-        public bool accessPoint;
-        public bool hotspot;
-        public bool ipTag;
-        public bool accessListTag;
-        public bool vlanTag;
-        public bool powerSwitch;
+        public MenuElementPair connection;
+        public MenuElementPair straightThroughConnection;
+        public MenuElementPair crossOverConnection;
+        public MenuElementPair disconnection;
+        public MenuElementPair _switch;
+        public MenuElementPair router;
+        public MenuElementPair accessPoint;
+        public MenuElementPair hotspot;
+        public MenuElementPair ipTag;
+        public MenuElementPair accessListTag;
+        public MenuElementPair vlanTag;
+        public MenuElementPair powerSwitch;
+    }
+
+    [Serializable]
+    public struct MenuElementPair
+    {
+        public bool isUse;
+        public int useCount;
     }
 
     [Serializable]

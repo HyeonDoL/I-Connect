@@ -25,20 +25,24 @@ public class InGameManager : MonoBehaviour
     private ParticleSystem connectParticle;
 
     [SerializeField]
-    private GameObject[] LvList;
+    private GameObject[] lvList;
 
     private int maxCompleteCount;
     private int completeCount;
+
+    public bool isCanConnect { get; set; }
 
     private void Awake()
     {
         instance = this;
 
+        isCanConnect = false;
+
         completeCount = 0;
 
         maxCompleteCount = inGameSheet.m_data[GameManager.Instance.StageLv - 1].maxComplete;
 
-        LvList[GameManager.Instance.StageLv - 1].SetActive(true);
+        lvList[GameManager.Instance.StageLv - 1].SetActive(true);
     }
 
     public void DisConnect()

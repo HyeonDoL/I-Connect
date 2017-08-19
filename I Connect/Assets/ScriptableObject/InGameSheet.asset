@@ -14,153 +14,198 @@ MonoBehaviour:
   m_data:
   - maxComplete: 2
     checkMenu:
-      connection: 1
-      straightThroughConnection: 0
-      crossOverConnection: 1
-      disconnection: 0
-      _switch: 1
-      router: 0
-      accessPoint: 1
-      hotspot: 0
-      ipTag: 1
-      accessListTag: 0
-      vlanTag: 1
-      powerSwitch: 1
+      connection:
+        isUse: 1
+        useCount: 99
+      straightThroughConnection:
+        isUse: 0
+        useCount: 0
+      crossOverConnection:
+        isUse: 0
+        useCount: 0
+      disconnection:
+        isUse: 1
+        useCount: 99
+      _switch:
+        isUse: 1
+        useCount: 1
+      router:
+        isUse: 1
+        useCount: 2
+      accessPoint:
+        isUse: 0
+        useCount: 0
+      hotspot:
+        isUse: 0
+        useCount: 0
+      ipTag:
+        isUse: 0
+        useCount: 0
+      accessListTag:
+        isUse: 0
+        useCount: 0
+      vlanTag:
+        isUse: 0
+        useCount: 0
+      powerSwitch:
+        isUse: 0
+        useCount: 0
     path:
     - start: 
       end: 
   - maxComplete: 3
     checkMenu:
-      connection: 0
-      straightThroughConnection: 0
-      crossOverConnection: 0
-      disconnection: 0
-      _switch: 0
-      router: 0
-      accessPoint: 0
-      hotspot: 0
-      ipTag: 0
-      accessListTag: 0
-      vlanTag: 0
-      powerSwitch: 0
+      connection:
+        isUse: 1
+        useCount: 99
+      straightThroughConnection:
+        isUse: 0
+        useCount: 0
+      crossOverConnection:
+        isUse: 0
+        useCount: 0
+      disconnection:
+        isUse: 1
+        useCount: 99
+      _switch:
+        isUse: 0
+        useCount: 0
+      router:
+        isUse: 0
+        useCount: 0
+      accessPoint:
+        isUse: 0
+        useCount: 0
+      hotspot:
+        isUse: 0
+        useCount: 0
+      ipTag:
+        isUse: 0
+        useCount: 0
+      accessListTag:
+        isUse: 0
+        useCount: 0
+      vlanTag:
+        isUse: 0
+        useCount: 0
+      powerSwitch:
+        isUse: 0
+        useCount: 0
     path: []
   - maxComplete: 3
     checkMenu:
-      connection: 0
-      straightThroughConnection: 0
-      crossOverConnection: 0
-      disconnection: 0
-      _switch: 0
-      router: 0
-      accessPoint: 0
-      hotspot: 0
-      ipTag: 0
-      accessListTag: 0
-      vlanTag: 0
-      powerSwitch: 0
+      connection:
+        isUse: 1
+        useCount: 99
+      straightThroughConnection:
+        isUse: 0
+        useCount: 0
+      crossOverConnection:
+        isUse: 0
+        useCount: 0
+      disconnection:
+        isUse: 1
+        useCount: 99
+      _switch:
+        isUse: 1
+        useCount: 1
+      router:
+        isUse: 0
+        useCount: 0
+      accessPoint:
+        isUse: 0
+        useCount: 0
+      hotspot:
+        isUse: 0
+        useCount: 0
+      ipTag:
+        isUse: 0
+        useCount: 0
+      accessListTag:
+        isUse: 0
+        useCount: 0
+      vlanTag:
+        isUse: 0
+        useCount: 0
+      powerSwitch:
+        isUse: 0
+        useCount: 0
     path: []
   - maxComplete: 3
     checkMenu:
-      connection: 0
-      straightThroughConnection: 0
-      crossOverConnection: 0
-      disconnection: 0
-      _switch: 0
-      router: 0
-      accessPoint: 0
-      hotspot: 0
-      ipTag: 0
-      accessListTag: 0
-      vlanTag: 0
-      powerSwitch: 0
+      connection:
+        isUse: 0
+        useCount: 0
+      straightThroughConnection:
+        isUse: 1
+        useCount: 99
+      crossOverConnection:
+        isUse: 1
+        useCount: 99
+      disconnection:
+        isUse: 1
+        useCount: 99
+      _switch:
+        isUse: 1
+        useCount: 2
+      router:
+        isUse: 0
+        useCount: 0
+      accessPoint:
+        isUse: 0
+        useCount: 0
+      hotspot:
+        isUse: 0
+        useCount: 0
+      ipTag:
+        isUse: 0
+        useCount: 0
+      accessListTag:
+        isUse: 0
+        useCount: 0
+      vlanTag:
+        isUse: 0
+        useCount: 0
+      powerSwitch:
+        isUse: 0
+        useCount: 0
     path: []
   - maxComplete: 3
     checkMenu:
-      connection: 0
-      straightThroughConnection: 0
-      crossOverConnection: 0
-      disconnection: 0
-      _switch: 0
-      router: 0
-      accessPoint: 0
-      hotspot: 0
-      ipTag: 0
-      accessListTag: 0
-      vlanTag: 0
-      powerSwitch: 0
-    path: []
-  - maxComplete: 3
-    checkMenu:
-      connection: 0
-      straightThroughConnection: 0
-      crossOverConnection: 0
-      disconnection: 0
-      _switch: 0
-      router: 0
-      accessPoint: 0
-      hotspot: 0
-      ipTag: 0
-      accessListTag: 0
-      vlanTag: 0
-      powerSwitch: 0
-    path: []
-  - maxComplete: 3
-    checkMenu:
-      connection: 0
-      straightThroughConnection: 0
-      crossOverConnection: 0
-      disconnection: 0
-      _switch: 0
-      router: 0
-      accessPoint: 0
-      hotspot: 0
-      ipTag: 0
-      accessListTag: 0
-      vlanTag: 0
-      powerSwitch: 0
-    path: []
-  - maxComplete: 3
-    checkMenu:
-      connection: 0
-      straightThroughConnection: 0
-      crossOverConnection: 0
-      disconnection: 0
-      _switch: 0
-      router: 0
-      accessPoint: 0
-      hotspot: 0
-      ipTag: 0
-      accessListTag: 0
-      vlanTag: 0
-      powerSwitch: 0
-    path: []
-  - maxComplete: 3
-    checkMenu:
-      connection: 0
-      straightThroughConnection: 0
-      crossOverConnection: 0
-      disconnection: 0
-      _switch: 0
-      router: 0
-      accessPoint: 0
-      hotspot: 0
-      ipTag: 0
-      accessListTag: 0
-      vlanTag: 0
-      powerSwitch: 0
-    path: []
-  - maxComplete: 3
-    checkMenu:
-      connection: 0
-      straightThroughConnection: 0
-      crossOverConnection: 0
-      disconnection: 0
-      _switch: 0
-      router: 0
-      accessPoint: 0
-      hotspot: 0
-      ipTag: 0
-      accessListTag: 0
-      vlanTag: 0
-      powerSwitch: 0
+      connection:
+        isUse: 0
+        useCount: 0
+      straightThroughConnection:
+        isUse: 1
+        useCount: 1
+      crossOverConnection:
+        isUse: 0
+        useCount: 0
+      disconnection:
+        isUse: 1
+        useCount: 99
+      _switch:
+        isUse: 0
+        useCount: 0
+      router:
+        isUse: 0
+        useCount: 0
+      accessPoint:
+        isUse: 0
+        useCount: 0
+      hotspot:
+        isUse: 1
+        useCount: 1
+      ipTag:
+        isUse: 0
+        useCount: 0
+      accessListTag:
+        isUse: 0
+        useCount: 0
+      vlanTag:
+        isUse: 0
+        useCount: 0
+      powerSwitch:
+        isUse: 0
+        useCount: 0
     path: []

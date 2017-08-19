@@ -28,6 +28,9 @@ public class DeviceLineManager : MonoBehaviour
         if (!GameManager.Instance.IsCanTouch)
             return;
 
+        if (!InGameManager.Instance.isCanConnect)
+            return;
+
         line = ObjectPoolManager.Instance.GetObject(ObjectPoolType.Line, Vector3.zero).GetComponent<UIMeshLine>();
 
         Vector2 objectPosition = Camera.main.WorldToViewportPoint(transform.position);
@@ -43,6 +46,9 @@ public class DeviceLineManager : MonoBehaviour
     void OnMouseUp()
     {
         if (!GameManager.Instance.IsCanTouch)
+            return;
+
+        if (!InGameManager.Instance.isCanConnect)
             return;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -120,6 +126,9 @@ public class DeviceLineManager : MonoBehaviour
     void OnMouseDrag()
     {
         if (!GameManager.Instance.IsCanTouch)
+            return;
+
+        if (!InGameManager.Instance.isCanConnect)
             return;
 
         Vector2 mousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);

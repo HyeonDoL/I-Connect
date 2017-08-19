@@ -1,24 +1,24 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+public enum MenuElement
+{
+    Connection = 0,
+    StraightThroughConnection,
+    CrossOverConnection,
+    Disconnection,
+    Switch,
+    Router,
+    AccessPoint,
+    Hotspot,
+    IpTag,
+    AccessListTag,
+    VlanTag,
+    PowerSwitch
+}
+
 public class SortMenu : MonoBehaviour
 {
-    public enum MenuElement
-    {
-        Connection = 0,
-        StraightThroughConnection,
-        CrossOverConnection,
-        Disconnection,
-        Switch,
-        Router,
-        AccessPoint,
-        Hotspot,
-        IpTag,
-        AccessListTag,
-        VlanTag,
-        PowerSwitch
-    }
-
     [SerializeField]
     private RectTransform[] elementTrans;
 
@@ -36,6 +36,18 @@ public class SortMenu : MonoBehaviour
 
     private InGameData inGameData;
 
+    public bool[] IsCanUse() { return isCanUse; }
+
+    public RectTransform[] GetElementsTrans()
+    {
+        return elementTrans;
+    }
+
+    public MenuElement[] GetSortArray()
+    {
+        return sortArray;
+    }
+
     private void Awake()
     {
         inGameData = InGameManager.Instance.GetInGameData(GameManager.Instance.StageLv - 1);
@@ -49,18 +61,18 @@ public class SortMenu : MonoBehaviour
 
     private void SetIsUseList()
     {
-        isCanUse[0] = inGameData.checkMenu.connection;
-        isCanUse[1] = inGameData.checkMenu.straightThroughConnection;
-        isCanUse[2] = inGameData.checkMenu.crossOverConnection;
-        isCanUse[3] = inGameData.checkMenu.disconnection;
-        isCanUse[4] = inGameData.checkMenu._switch;
-        isCanUse[5] = inGameData.checkMenu.router;
-        isCanUse[6] = inGameData.checkMenu.accessPoint;
-        isCanUse[7] = inGameData.checkMenu.hotspot;
-        isCanUse[8] = inGameData.checkMenu.ipTag;
-        isCanUse[9] = inGameData.checkMenu.accessListTag;
-        isCanUse[10] = inGameData.checkMenu.vlanTag;
-        isCanUse[11] = inGameData.checkMenu.powerSwitch;
+        isCanUse[0] = inGameData.checkMenu.connection.isUse;
+        isCanUse[1] = inGameData.checkMenu.straightThroughConnection.isUse;
+        isCanUse[2] = inGameData.checkMenu.crossOverConnection.isUse;
+        isCanUse[3] = inGameData.checkMenu.disconnection.isUse;
+        isCanUse[4] = inGameData.checkMenu._switch.isUse;
+        isCanUse[5] = inGameData.checkMenu.router.isUse;
+        isCanUse[6] = inGameData.checkMenu.accessPoint.isUse;
+        isCanUse[7] = inGameData.checkMenu.hotspot.isUse;
+        isCanUse[8] = inGameData.checkMenu.ipTag.isUse;
+        isCanUse[9] = inGameData.checkMenu.accessListTag.isUse;
+        isCanUse[10] = inGameData.checkMenu.vlanTag.isUse;
+        isCanUse[11] = inGameData.checkMenu.powerSwitch.isUse;
     }
 
     private void SortArray()
