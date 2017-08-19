@@ -46,6 +46,11 @@ public class UIMeshLine : MaskableGraphic, IMeshModifier, ICanvasRaycastFilter
     [Header("0일땐 안그림 1일때 전부그림")]
     [SerializeField]
     float m_lengthRatio = 1f;
+
+    
+    public bool isUsingOnMenu;
+    
+
     public float lengthRatio
     {
         get { return m_lengthRatio; }

@@ -29,6 +29,9 @@ public class Menu_ShowDetail : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     [SerializeField]
     private Text bottomText;
 
+    [SerializeField]
+    private ScrollRect myRect;
+
     private float DefaultScale;
 
     private bool isGoTarget;
@@ -120,7 +123,8 @@ public class Menu_ShowDetail : MonoBehaviour, IDragHandler, IPointerUpHandler, I
         line = ObjectPoolManager.Instance.GetObject(ObjectPoolType.Line, Vector3.zero).GetComponent<UIMeshLine>();
 
         Vector2 objectPosition = myTransform.localPosition;
-        Vector2 position = new Vector2((objectPosition.x ) , (objectPosition.y ) );
+        Debug.Log("myRect.normalizedPosition.x : "+ myRect.normalizedPosition.x);
+        Vector2 position = new Vector2(objectPosition.x - (8000 * myRect.normalizedPosition.x), (objectPosition.y )) ;
 
         line.SetPointPosition(0, position);
         line.SetPointPosition(1, position);
