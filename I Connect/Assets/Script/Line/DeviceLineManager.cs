@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class DeviceLineManager : MonoBehaviour
 {
+    [SerializeField]
+    private ParticleSystem connectParticle;
+
+    private List<Vector2> connectedPositionList = new List<Vector2>();
+
     private UIMeshLine line;
+
+    public List<Vector2> ConnectedPositionList()
+    {
+        return connectedPositionList;
+    }
 
     void OnMouseDown()
     {
@@ -12,7 +22,7 @@ public class DeviceLineManager : MonoBehaviour
 
         Vector2 objectPosition = Camera.main.WorldToViewportPoint(transform.position);
 
-        Vector2 position = new Vector2((objectPosition.x - 0.5f) * Screen.width, (objectPosition.y - 0.5f) * Screen.height);
+        Vector2 position = new Vector2((objectPosition.x - 0.5f) * 1600, (objectPosition.y - 0.5f) * 900);
 
         line.SetPointPosition(0, position);
         line.SetPointPosition(1, position);
@@ -29,13 +39,53 @@ public class DeviceLineManager : MonoBehaviour
         {
             if (hit.collider.CompareTag("Device"))
             {
+                List<Vector2> targetConnectedList = hit.transform.GetComponent<DeviceLineManager>().ConnectedPositionList();
+
+                for(int  i = 0; i < connectedPositionList.Count; i++)
+                {
+                    if(connectedPositionList[i] == (Vector2)hit.transform.position)
+                    {
+                        MeshLineManager.Instance.Clear(line);
+                        return;
+                    }
+                }
+
+                for (int i = 0; i < targetConnectedList.Count; i++)
+                {
+                    if (targetConnectedList[i] == (Vector2)this.transform.position)
+                    {
+                        MeshLineManager.Instance.Clear(line);
+                        return;
+                    }
+                }
+
+                LimitMaxLine lineLimit = hit.transform.GetComponent<LimitMaxLine>();
+
+                if (!lineLimit.IsCanConnect || hit.transform.position == this.transform.position)
+                {
+                    MeshLineManager.Instance.Clear(line);
+                    return;
+                }
+
+                connectedPositionList.Add(hit.transform.position);
+
                 Vector2 objectPosition = Camera.main.WorldToViewportPoint((Vector2)hit.transform.position);
 
-                Vector2 position = new Vector2((objectPosition.x - 0.5f) * Screen.width, (objectPosition.y - 0.5f) * Screen.height);
+                Vector2 position = new Vector2((objectPosition.x - 0.5f) * 1600, (objectPosition.y - 0.5f) * 900);
 
                 line.SetPointPosition(1, position);
 
-                MeshLineManager.Instance.Connect(line);
+                lineLimit.Connect();
+                MeshLineManager.Instance.Connect(line, lineLimit, connectedPositionList);
+
+                if (lineLimit.GetDeviceType() == MaxLineForType.EndDevice)
+                {
+                    InGameManager.Instance.Complete();
+                }
+
+                connectParticle.transform.position = hit.transform.position;
+
+                connectParticle.Play();
             }
         }
         else
@@ -48,7 +98,7 @@ public class DeviceLineManager : MonoBehaviour
     {
         Vector2 mousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
-        Vector2 position = new Vector2((mousePosition.x - 0.5f) * Screen.width, (mousePosition.y - 0.5f) * Screen.height);
+        Vector2 position = new Vector2((mousePosition.x - 0.5f) * 1600, (mousePosition.y - 0.5f) * 900);
 
         line.SetPointPosition(1, position);
     }

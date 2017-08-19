@@ -20,4 +20,9 @@ public class StageControl : MonoBehaviour
 
         SceneChanger.Instance.ChangeScene(SceneType.InGame);
     }
+
+    public void ReturnMenu()
+    {
+        SceneChanger.Instance.ChangeScene(SceneType.Menu);
+    }
 }
