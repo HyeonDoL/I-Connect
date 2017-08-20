@@ -63,6 +63,9 @@ public class InGameManager : MonoBehaviour
 
         Debug.Log("Complete");
 
+        Debug.Log(completeCount);
+        Debug.Log(maxCompleteCount);
+
         if (completeCount >= maxCompleteCount)
             Success();
     }

@@ -51,6 +51,8 @@ public class DisConnect : MonoBehaviour
             targetDeviceInfo.GetLimitMaxLine().DisConnect();
             thisDeviceInfo.GetLimitMaxLine().DisConnect();
         }
+
+        //AudioManager.Instance.DoMyBestPlay(AudioManager.AudioClipIndex.Disconnect);
     }
 
     public void Free()

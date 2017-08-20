@@ -61,6 +61,8 @@ public class Menu_ShowDetail : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 
     private void Awake()
     {
+        AudioManager.Instance.DoMyBestPlay(AudioManager.AudioClipIndex.Medieval_Courtyard);
+
         myTransform = this.GetComponent<RectTransform>();
         DefaultScale = myTransform.localScale.x;
         for (int i = 0; i < Stages.Length; ++i)
@@ -74,7 +76,9 @@ public class Menu_ShowDetail : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 
     public void OnSelect()
     {
-        if(!isGoTarget)
+        AudioManager.Instance.DoMyBestPlay(AudioManager.AudioClipIndex.MenuClick);
+
+        if (!isGoTarget)
             StartCoroutine(FadeText());
 
         StartCoroutine(GoTargetPosition());
