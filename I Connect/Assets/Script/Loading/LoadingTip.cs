@@ -7,13 +7,18 @@ public class LoadingTip : MonoBehaviour
     private TipSheet sheet;
 
     [SerializeField]
-    private Image tipText;
+    private Image TipImage;
+
+    [SerializeField]
+    private Text TipText;
 
     [SerializeField]
     private Vector2[] StageTipRange;
 
     private void Awake()
     {
-        tipText.sprite =  sheet.m_data[Random.Range(Mathf.RoundToInt( StageTipRange[ GameManager.Instance.StageLv-1].x), Mathf.RoundToInt( StageTipRange[GameManager.Instance.StageLv-1].y))].tip;
+        int index = Random.Range(Mathf.RoundToInt(StageTipRange[GameManager.Instance.StageLv - 1].x), Mathf.RoundToInt(StageTipRange[GameManager.Instance.StageLv - 1].y));
+        TipImage.sprite =  sheet.m_data[index].tip;
+        TipText.text = sheet.m_data[index].TipText;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -8,7 +9,8 @@ using UnityEditor;
 [Serializable]
 public class TipData
 {
-    
+    [TextArea]
+    public String TipText;
     public Sprite tip;
 }
 

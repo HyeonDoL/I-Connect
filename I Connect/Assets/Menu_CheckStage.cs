@@ -74,8 +74,8 @@ public class Menu_CheckStage : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 
         isGoTarget = false;
         StageIndex = GameManager.Instance.StageLv - 1;
-
-        for(int i=0;i<3;++i)
+        StageIndex = 0;
+        for (int i=1;i<3;++i)
         {
             UsingImages[i].sprite = Tests[StageIndex].Sprites[i];
         }
@@ -85,6 +85,7 @@ public class Menu_CheckStage : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     public void OnSelect()
     {
         StartCoroutine(GoTargetPosition());
+        UsingImages[0].sprite = Tests[StageIndex].Sprites[0];
     }
 
     private IEnumerator GoTargetPosition()
