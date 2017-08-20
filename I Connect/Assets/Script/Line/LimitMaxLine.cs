@@ -18,6 +18,8 @@ public class LimitMaxLine : MonoBehaviour
 
     public bool IsCanConnect { get; set; }
 
+    public ConnectDisplayer Displayer;
+
     private void Awake()
     {
         lineCount = 0;
@@ -32,7 +34,7 @@ public class LimitMaxLine : MonoBehaviour
             return;
 
         lineCount += 1;
-
+        if (!Displayer.AddConnection()) Debug.Log("Displayer ERROR");
         if (lineCount >= maxLine)
             IsCanConnect = false;
     }
@@ -41,6 +43,7 @@ public class LimitMaxLine : MonoBehaviour
     {
         lineCount -= 1;
 
+        if (!Displayer.DeleteConnection()) Debug.Log("Displayer ERROR");
         if (lineCount < maxLine)
             IsCanConnect = true;
     }
