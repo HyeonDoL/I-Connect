@@ -92,6 +92,8 @@ public class MeshLineManager : MonoBehaviour
 
         disConnect.SetCurrentPositionList(connectedPositionList);
 
+        disConnect.GetComponent<RectTransform>().localScale = new Vector2(80, 80);
+
         disConnect.GetComponent<RectTransform>().anchoredPosition = centerPoint;
     }
 }

@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class DisConnect : MonoBehaviour
 {
+    [SerializeField]
+    private Animator disConnectAni;
+
     private Vector2 currentPosition;
     private List<Vector2> currentPositionList;
 
@@ -34,6 +37,12 @@ public class DisConnect : MonoBehaviour
         currentPosition = currentPositionList[currentPositionList.Count - 1];
     }
 
+    public void PlayDisConnect()
+    {
+        disConnectAni.SetTrigger("DIsConnect");
+
+        Debug.Log("Click");
+    }
 
     public void DisConnecting()
     {
@@ -53,6 +62,10 @@ public class DisConnect : MonoBehaviour
             currentDevice.DisConnect();
             thisDevice.DisConnect();
         }
+    }
+
+    public void Free()
+    {
         ObjectPoolManager.Instance.Free(this.gameObject);
     }
 }

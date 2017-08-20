@@ -53,7 +53,7 @@ MonoBehaviour:
     path:
     - start: 
       end: 
-  - maxComplete: 3
+  - maxComplete: 2
     checkMenu:
       connection:
         isUse: 1
@@ -92,7 +92,7 @@ MonoBehaviour:
         isUse: 0
         useCount: 0
     path: []
-  - maxComplete: 3
+  - maxComplete: 4
     checkMenu:
       connection:
         isUse: 1
