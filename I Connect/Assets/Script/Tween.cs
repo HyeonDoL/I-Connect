@@ -159,4 +159,46 @@ public static class Tween
             }
         }
     }
+
+    public static class TweenRigidbody2D
+    {
+        public static IEnumerator MoveData(Rigidbody2D rigidbody, Vector2 start, Vector2 end, float time)
+        {
+            float t = 0f;
+
+            Vector2 position;
+
+            while (t < 1f)
+            {
+                t += Time.deltaTime / time;
+
+                position = Vector2.Lerp(start, end, t);
+
+                rigidbody.MovePosition(position);
+
+                yield return null;
+            }
+        }
+
+        public static IEnumerator MoveData(Rigidbody2D rigidbody, Vector2 start, Vector2 end, float time, BoxCollider2D boxCollider2D)
+        {
+            float t = 0f;
+
+            Vector2 position;
+
+            while (t < 1f)
+            {
+                t += Time.deltaTime / time;
+
+                position = Vector2.Lerp(start, end, t);
+
+                rigidbody.MovePosition(position);
+
+                if (t >= 0.5f)
+                    boxCollider2D.enabled = true;
+
+                yield return null;
+            }
+        }
+    }
 }

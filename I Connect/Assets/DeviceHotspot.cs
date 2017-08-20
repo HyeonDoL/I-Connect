@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class DeviceHotspot : MonoBehaviour
 {
-    
-
-    [SerializeField]
+        [SerializeField]
     private float rotateSpeed;
 
     [SerializeField]

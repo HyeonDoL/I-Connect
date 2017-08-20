@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class InGameManager : MonoBehaviour
@@ -31,8 +32,9 @@ public class InGameManager : MonoBehaviour
     private int completeCount;
 
     public bool isCanConnect { get; set; }
-
     public bool isClickButton { get; set; }
+
+    public CableType SelectCableType { get; set; }
 
     private void Awake()
     {
@@ -40,6 +42,8 @@ public class InGameManager : MonoBehaviour
 
         isCanConnect = false;
         isClickButton = false;
+
+        SelectCableType = CableType.None;
 
         completeCount = 0;
 
@@ -57,12 +61,21 @@ public class InGameManager : MonoBehaviour
     {
         completeCount += 1;
 
+        Debug.Log("Complete");
+
         if (completeCount >= maxCompleteCount)
             Success();
     }
 
-    public void Success()
+    private void Success()
     {
+        StartCoroutine(_Success());
+    }
+
+    private IEnumerator _Success()
+    {
+        yield return new WaitForSeconds(1f);
+
         clearWindow.SetActive(true);
     }
 
@@ -71,6 +84,10 @@ public class InGameManager : MonoBehaviour
         return connectParticle;
     }
 
+    public InGameSheet GetInGameSheet()
+    {
+        return inGameSheet;
+    }
     public InGameData GetInGameData(int index)
     {
         return inGameSheet.m_data[index];

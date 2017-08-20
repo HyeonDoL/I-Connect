@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CableType
+{
+    None,
+    CrossOver,
+    StraightThrough
+}
+
 public enum SelectSpawnType
 {
     None,
@@ -52,6 +59,8 @@ public class SelectElement : MonoBehaviour
 
         Select();
 
+        InGameManager.Instance.SelectCableType = CableType.StraightThrough;
+
         SelectOutline(MenuElement.StraightThroughConnection);
     }
 
@@ -61,6 +70,8 @@ public class SelectElement : MonoBehaviour
             return;
 
         Select();
+
+        InGameManager.Instance.SelectCableType = CableType.CrossOver;
 
         SelectOutline(MenuElement.CrossOverConnection);
     }

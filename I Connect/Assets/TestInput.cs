@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TestInput : MonoBehaviour
 {
-
     // Use this for initialization
     void Start()
     {
@@ -45,5 +44,22 @@ public class TestInput : MonoBehaviour
             GameManager.Instance.SetStageClear(2, false);
 
         }
+        if (Input.GetKeyDown(KeyCode.K) || true)
+        {
+            this.GetComponent<Rigidbody2D>().MovePosition(GetComponent<Rigidbody2D>().position + Vector2.up * 10f);
+            Debug.Log("asd : " + GetComponent<Rigidbody2D>().position + Vector2.up * 10f);
+
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        //if (Input.GetKeyDown(KeyCode.K) || true)
+        //{
+        //    this.GetComponent<Rigidbody2D>().MovePosition(GetComponent<Rigidbody2D>().position + Vector2.up * 10f);
+        //    Debug.Log("asd : " + GetComponent<Rigidbody2D>().position + Vector2.up * 10f);
+
+
+        //}
     }
 }

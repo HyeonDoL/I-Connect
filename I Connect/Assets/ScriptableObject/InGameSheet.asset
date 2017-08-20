@@ -27,10 +27,10 @@ MonoBehaviour:
         isUse: 1
         useCount: 99
       _switch:
-        isUse: 1
+        isUse: 0
         useCount: 1
       router:
-        isUse: 1
+        isUse: 0
         useCount: 2
       accessPoint:
         isUse: 0
@@ -51,8 +51,10 @@ MonoBehaviour:
         isUse: 0
         useCount: 0
     path:
-    - start: 
-      end: 
+    - start: 0
+      end: 1
+    - start: 1
+      end: 0
   - maxComplete: 2
     checkMenu:
       connection:
@@ -91,7 +93,13 @@ MonoBehaviour:
       powerSwitch:
         isUse: 0
         useCount: 0
-    path: []
+    path:
+    - start: 0
+      end: 2
+    - start: 2
+      end: 1
+    - start: 1
+      end: 0
   - maxComplete: 4
     checkMenu:
       connection:
@@ -130,7 +138,17 @@ MonoBehaviour:
       powerSwitch:
         isUse: 0
         useCount: 0
-    path: []
+    path:
+    - start: 0
+      end: 2
+    - start: 3
+      end: 4
+    - start: 4
+      end: 3
+    - start: 1
+      end: 3
+    - start: 2
+      end: 0
   - maxComplete: 3
     checkMenu:
       connection:
@@ -169,7 +187,13 @@ MonoBehaviour:
       powerSwitch:
         isUse: 0
         useCount: 0
-    path: []
+    path:
+    - start: 0
+      end: 0
+    - start: 0
+      end: 0
+    - start: 0
+      end: 0
   - maxComplete: 3
     checkMenu:
       connection:
@@ -208,4 +232,67 @@ MonoBehaviour:
       powerSwitch:
         isUse: 0
         useCount: 0
-    path: []
+    path:
+    - start: 0
+      end: 0
+    - start: 0
+      end: 0
+    - start: 0
+      end: 0
+    - start: 0
+      end: 0
+    - start: 0
+      end: 0
+    - start: 0
+      end: 0
+  - maxComplete: 3
+    checkMenu:
+      connection:
+        isUse: 0
+        useCount: 0
+      straightThroughConnection:
+        isUse: 1
+        useCount: 1
+      crossOverConnection:
+        isUse: 0
+        useCount: 0
+      disconnection:
+        isUse: 1
+        useCount: 99
+      _switch:
+        isUse: 0
+        useCount: 0
+      router:
+        isUse: 0
+        useCount: 0
+      accessPoint:
+        isUse: 0
+        useCount: 0
+      hotspot:
+        isUse: 1
+        useCount: 1
+      ipTag:
+        isUse: 0
+        useCount: 0
+      accessListTag:
+        isUse: 0
+        useCount: 0
+      vlanTag:
+        isUse: 0
+        useCount: 0
+      powerSwitch:
+        isUse: 0
+        useCount: 0
+    path:
+    - start: 0
+      end: 0
+    - start: 0
+      end: 0
+    - start: 0
+      end: 0
+    - start: 0
+      end: 0
+    - start: 0
+      end: 0
+    - start: 0
+      end: 0

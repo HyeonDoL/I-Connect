@@ -41,8 +41,8 @@ public class InGameData
     [Serializable]
     public struct DataMovePath
     {
-        public string start;
-        public string end;
+        public int start;
+        public int end;
     }
 }
 

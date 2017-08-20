@@ -7,7 +7,8 @@ public enum ObjectPoolType
     DisConnectButton,
     WirelessLines,
     Switch,
-    Router
+    Router,
+    Data
 }
 
 [System.Serializable]

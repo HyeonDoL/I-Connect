@@ -6,11 +6,8 @@ public class DisConnect : MonoBehaviour
     [SerializeField]
     private Animator disConnectAni;
 
-    private Vector2 currentPosition;
-    private List<Vector2> currentPositionList;
-
-    private LimitMaxLine currentDevice;
-    private LimitMaxLine thisDevice;
+    private DeviceInfo thisDeviceInfo;
+    private DeviceInfo targetDeviceInfo;
 
     private UIMeshLine meshLine;
     private UIMeshLine duplicationMeshLine;
@@ -23,25 +20,19 @@ public class DisConnect : MonoBehaviour
     {
         this.duplicationMeshLine = meshLine;
     }
-    public void SetCurrentDevice(LimitMaxLine device)
+
+    public void SetThisDeviceInfo(DeviceInfo device)
     {
-        currentDevice = device;
+        thisDeviceInfo = device;
     }
-    public void SetThisDevice(LimitMaxLine device)
+    public void SetTargetDeviceInfo(DeviceInfo device)
     {
-        thisDevice = device;
-    }
-    public void SetCurrentPositionList(List<Vector2> list)
-    {
-        currentPositionList = list;
-        currentPosition = currentPositionList[currentPositionList.Count - 1];
+        targetDeviceInfo = device;
     }
 
     public void PlayDisConnect()
     {
         disConnectAni.SetTrigger("DIsConnect");
-
-        Debug.Log("Click");
     }
 
     public void DisConnecting()
@@ -51,16 +42,14 @@ public class DisConnect : MonoBehaviour
 
         if (SceneChanger.Instance.SceneName == SceneType.InGame)
         {
-            if(currentDevice.GetDeviceType() == MaxLineForType.EndDevice)
+            if (targetDeviceInfo.GetDeviceType() == DeviceType.EndDevice)
                 InGameManager.Instance.DisConnect();
 
-            if (thisDevice.GetDeviceType() == MaxLineForType.EndDevice)
-                InGameManager.Instance.DisConnect();
+            targetDeviceInfo.ConnectedDeviceList().Remove(thisDeviceInfo.GetDeviceData());
+            thisDeviceInfo.ConnectedDeviceList().Remove(targetDeviceInfo.GetDeviceData());
 
-            currentPositionList.Remove(currentPosition);
-
-            currentDevice.DisConnect();
-            thisDevice.DisConnect();
+            targetDeviceInfo.GetLimitMaxLine().DisConnect();
+            thisDeviceInfo.GetLimitMaxLine().DisConnect();
         }
     }
 
