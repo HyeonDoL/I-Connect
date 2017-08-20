@@ -11,6 +11,7 @@ public class Loading : MonoBehaviour
     private bool isDone = false;
     private float time = 0f;
     AsyncOperation asyncOperation;
+    
 
     private void Start()
     {

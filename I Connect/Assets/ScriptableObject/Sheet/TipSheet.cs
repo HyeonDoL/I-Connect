@@ -8,8 +8,8 @@ using UnityEditor;
 [Serializable]
 public class TipData
 {
-    [TextArea]
-    public string tip;
+    
+    public Sprite tip;
 }
 
 public class TipSheet : Sheet<TipData>

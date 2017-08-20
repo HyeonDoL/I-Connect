@@ -28,6 +28,12 @@ public class SceneChanger : MonoBehaviour
 
         SceneManager.LoadScene("Load");
     }
+    public void ChangeScene(string sceneName,bool isUseCheckStage)
+    {
+        SceneName = sceneName;
+
+        SceneManager.LoadScene("CheckStage");
+    }
 }
 
 public struct SceneType
@@ -35,4 +41,5 @@ public struct SceneType
     public static string Title = "Title";
     public static string Menu = "Menu";
     public static string InGame = "InGame";
+    public static string CheckStage = "CheckStage";
 }

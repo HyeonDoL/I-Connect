@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Name: TipSheet
   m_EditorClassIdentifier: 
   m_data:
-  - tip: Test Tip
-  - tip: "\uD301 \uD14C\uC2A4\uD2B8"
-  - tip: "\uC5F0\uACB0\uD558\uACE0 \uC5F0\uACB0\uD558\uC790"
-  - tip: "\uC774\uAC83\uC800\uAC83 \uC694\uAC83\uC800\uAC83"
-  - tip: "\uC5D0\uBC14\uBC14\uC544\uBC25\uBC2A\u3134\uC555\u3148"
+  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}

@@ -19,9 +19,26 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
 
         IsCanTouch = true;
+        clearedStage.SetValue(PlayerPrefs.GetInt("clearedStage", 0));
     }
 
     public int StageLv { set; get; }
+
+    private  BitsByte clearedStage;
+    
+    public void SetStageClear(int index,bool value)
+    {
+        clearedStage[index] = value;
+        Debug.Log("CST : " + clearedStage.GetValue());
+        PlayerPrefs.SetInt("clearedStage", clearedStage.GetValue());
+    }
+    public bool GetStageClear(int index)
+    {
+        return clearedStage[index];
+    }
+
+
+
 
     public bool IsCanTouch { set; get; }
 }
