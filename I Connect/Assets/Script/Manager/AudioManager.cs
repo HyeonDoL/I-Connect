@@ -48,10 +48,21 @@ public class AudioManager : MonoBehaviour
     }
 
     #endregion
-
+    public int GetCurrentIndex(AudioClipIndex index)
+    {
+        switch(index)
+        {
+            case AudioClipIndex.Bedtime_Story_Adventures: return 3;
+            case AudioClipIndex.Quiet_Night_at_the_Shack: return 4;
+            case AudioClipIndex.Figuring_it_All_Out: return 5;
+            case AudioClipIndex.Medieval_Courtyard: return 6;
+            default:
+                return (int)index;
+        }
+    }
     public void DoMyBestPlay(AudioClipIndex index)
     {
-        this.DoMyBestPlay((int)index);
+        this.DoMyBestPlay(GetCurrentIndex(index));
     }
 
     public void DoMyBestPlay(int index)
