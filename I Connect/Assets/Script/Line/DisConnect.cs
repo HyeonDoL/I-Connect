@@ -6,11 +6,18 @@ public class DisConnect : MonoBehaviour
     [SerializeField]
     private Animator disConnectAni;
 
+    private DeviceLineManager deviceLineManager;
+
     private DeviceInfo thisDeviceInfo;
     private DeviceInfo targetDeviceInfo;
 
     private UIMeshLine meshLine;
     private UIMeshLine duplicationMeshLine;
+
+    public void SetDeviceLineManager(DeviceLineManager deviceLineManager)
+    {
+        this.deviceLineManager = deviceLineManager;
+    }
 
     public void SetMeshLine(UIMeshLine meshLine)
     {
@@ -50,9 +57,11 @@ public class DisConnect : MonoBehaviour
 
             targetDeviceInfo.GetLimitMaxLine().DisConnect();
             thisDeviceInfo.GetLimitMaxLine().DisConnect();
+
+            deviceLineManager.IsConnected = false;
         }
 
-        //AudioManager.Instance.DoMyBestPlay(AudioManager.AudioClipIndex.Disconnect);
+        AudioManager.Instance.DoMyBestPlay(AudioManager.AudioClipIndex.Disconnect);
     }
 
     public void Free()

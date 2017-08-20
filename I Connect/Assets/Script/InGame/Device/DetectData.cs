@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DetectData : MonoBehaviour
@@ -29,6 +30,11 @@ public class DetectData : MonoBehaviour
             currentData = collision.GetComponent<InGameNodeData>();
             currentDeviceList = currentData.NodeDeviceInfo.ConnectedDeviceList();
 
+            Debug.Log("Connect");
+
+            if (ConnectData())
+                return;
+
             isConnected = false;
 
             for (int i = 0; i < deviceList.Count; i++)
@@ -37,14 +43,20 @@ public class DetectData : MonoBehaviour
                     isConnected = true;
             }
 
-            if (ConnectData())
-                return;
+            if (!isConnected)
+                deviceList.Add(currentData.NodeDeviceInfo.GetDeviceData());
+
+            Debug.Log("Connected Such EndNode");
 
             if (ConnectedSuchEndNode())
                 return;
 
+            Debug.Log("Connected Such Device");
+
             if (ConnectedSuchDevice())
                 return;
+
+            Debug.Log("Delete");
 
             currentData.DeleteNode();
         }
@@ -52,7 +64,7 @@ public class DetectData : MonoBehaviour
 
     private bool ConnectData()
     {
-        if (deviceInfo.GetDeviceId() == currentData.EndNodeID && !isConnected)
+        if (deviceInfo.GetDeviceId() == currentData.EndNodeID && deviceList.Count == 0)
         {
             deviceList.Add(currentData.NodeDeviceInfo.GetDeviceData());
 
@@ -72,7 +84,7 @@ public class DetectData : MonoBehaviour
         {
             if (deviceList[i].id == currentData.EndNodeID)
             {
-                StartCoroutine(Tween.TweenRigidbody2D.MoveData(currentRigid, this.transform.position, currentTrans.position, 0.8f, currentData.GetBoxCollider2D()));
+                StartCoroutine(TransmitNextDevice(deviceList[i].trans.position));
                 return true;
             }
         }
@@ -84,13 +96,19 @@ public class DetectData : MonoBehaviour
     {
         for (int i = 0; i < deviceList.Count; i++)
         {
-            if (deviceList[i].type == DeviceType.Router ||
-                deviceList[i].type == DeviceType.Switch)
+            if (deviceList[i].type != DeviceType.EndDevice)
             {
-                StartCoroutine(Tween.TweenRigidbody2D.MoveData(currentRigid, this.transform.position, deviceList[i].trans.position, 0.8f, currentData.GetBoxCollider2D()));
+                StartCoroutine(TransmitNextDevice(deviceList[i].trans.position));
                 return true;
             }
         }
         return false;
+    }
+
+    private IEnumerator TransmitNextDevice(Vector2 nextDevicePosition)
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        StartCoroutine(Tween.TweenRigidbody2D.MoveData(currentRigid, this.transform.position, nextDevicePosition, 0.8f, currentData.GetBoxCollider2D()));
     }
 }

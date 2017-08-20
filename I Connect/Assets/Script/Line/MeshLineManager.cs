@@ -93,4 +93,35 @@ public class MeshLineManager : MonoBehaviour
         disConnect.GetComponent<RectTransform>().localScale = new Vector2(80, 80);
         disConnect.GetComponent<RectTransform>().anchoredPosition = centerPoint;
     }
+
+    public void Connect(UIMeshLine meshLine1, DeviceInfo thisDeviceInfo, DeviceInfo targetDeviceInfo, DeviceLineManager deviceLineManager)
+    {
+        UIMeshLine meshLine2 = ObjectPoolManager.Instance.GetObject(ObjectPoolType.Line, Vector3.zero).GetComponent<UIMeshLine>();
+        DisConnect disConnect = ObjectPoolManager.Instance.GetObject(ObjectPoolType.DisConnectButton, Vector3.zero).GetComponent<DisConnect>();
+
+        meshLine1.lengthRatio = 1f;
+        meshLine2.lengthRatio = 1f;
+
+        Vector2 startPoint = meshLine1.GetPointInfo(0).point;
+        Vector2 endPoint = meshLine1.GetPointInfo(1).point;
+
+        Vector2 centerPoint = (endPoint - startPoint) / 2 + startPoint;
+
+        meshLine1.SetPointPosition(0, startPoint);
+        meshLine1.SetPointPosition(1, centerPoint);
+
+        meshLine2.SetPointPosition(0, endPoint);
+        meshLine2.SetPointPosition(1, centerPoint);
+
+        disConnect.SetDeviceLineManager(deviceLineManager);
+
+        disConnect.SetMeshLine(meshLine1);
+        disConnect.SetDuplicationMeshLine(meshLine2);
+
+        disConnect.SetTargetDeviceInfo(targetDeviceInfo);
+        disConnect.SetThisDeviceInfo(thisDeviceInfo);
+
+        disConnect.GetComponent<RectTransform>().localScale = new Vector2(80, 80);
+        disConnect.GetComponent<RectTransform>().anchoredPosition = centerPoint;
+    }
 }

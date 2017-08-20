@@ -7,13 +7,21 @@ public class DeviceLineManager : MonoBehaviour
     [SerializeField]
     private DeviceInfo deviceInfo;
 
+    private InGameData inGameData;
+
     private UIMeshLine line;
 
     private ParticleSystem connectParticle;
 
+    public bool IsConnected { get; set; }
+
     private void Awake()
     {
+        IsConnected = false;
+
         connectParticle = InGameManager.Instance.GetConnectParticle();
+
+        inGameData = InGameManager.Instance.GetInGameSheet().m_data[GameManager.Instance.StageLv - 1];
     }
 
     void OnMouseDown()
@@ -100,6 +108,8 @@ public class DeviceLineManager : MonoBehaviour
 
                 #endregion
 
+                IsConnected = true;
+
                 Vector2 objectPosition = Camera.main.WorldToViewportPoint((Vector2)hit.transform.position);
 
                 Vector2 position = new Vector2((objectPosition.x - 0.5f) * 1600, (objectPosition.y - 0.5f) * 900);
@@ -109,27 +119,19 @@ public class DeviceLineManager : MonoBehaviour
                 lineLimit.Connect();
                 maxLine.Connect();
 
-                MeshLineManager.Instance.Connect(line, deviceInfo, targetDeviceInfo);
+                MeshLineManager.Instance.Connect(line, deviceInfo, targetDeviceInfo, this);
 
-                InGameNodeData inGameNodeData = ObjectPoolManager.Instance.GetObject(ObjectPoolType.Data, this.transform.position).GetComponent<InGameNodeData>();
-                InGameNodeData inGameTargetNodeData = ObjectPoolManager.Instance.GetObject(ObjectPoolType.Data, this.transform.position).GetComponent<InGameNodeData>();
+                if(deviceInfo.GetDeviceType() == DeviceType.EndDevice)
+                    StartCoroutine(TransmitData(this.transform.position, hit.transform.position, deviceInfo));
 
-                inGameNodeData.transform.localScale = new Vector3(0.1f, 0.1f);
-                inGameNodeData.NodeDeviceInfo = deviceInfo;
-                inGameNodeData.EndNodeID = targetDeviceInfo.GetDeviceId();
-
-                inGameTargetNodeData.transform.localScale = new Vector3(0.1f, 0.1f);
-                inGameTargetNodeData.NodeDeviceInfo = targetDeviceInfo;
-                inGameTargetNodeData.EndNodeID = deviceInfo.GetDeviceId();
-
-                StartCoroutine(Tween.TweenRigidbody2D.MoveData(inGameNodeData.GetComponent<Rigidbody2D>(), this.transform.position, hit.transform.position, 1f, inGameNodeData.GetBoxCollider2D()));
-                StartCoroutine(Tween.TweenRigidbody2D.MoveData(inGameTargetNodeData.GetComponent<Rigidbody2D>(), hit.transform.position, this.transform.position, 1f, inGameTargetNodeData.GetBoxCollider2D()));
+                if (targetDeviceInfo.GetDeviceType() == DeviceType.EndDevice)
+                    StartCoroutine(TransmitData(hit.transform.position, this.transform.position, targetDeviceInfo));
 
                 connectParticle.transform.position = hit.transform.position;
 
                 connectParticle.Play();
 
-                //AudioManager.Instance.DoMyBestPlay(AudioManager.AudioClipIndex.connect);
+                AudioManager.Instance.DoMyBestPlay(AudioManager.AudioClipIndex.connect);
             }
         }
         else
@@ -151,5 +153,19 @@ public class DeviceLineManager : MonoBehaviour
         Vector2 position = new Vector2((mousePosition.x - 0.5f) * 1600, (mousePosition.y - 0.5f) * 900);
 
         line.SetPointPosition(1, position);
+    }
+
+    private IEnumerator TransmitData(Vector2 startPos, Vector2 endPos, DeviceInfo deviceInfo)
+    {
+        while (IsConnected)
+        {
+            InGameNodeData inGameNodeData = ObjectPoolManager.Instance.GetObject(ObjectPoolType.Data, startPos).GetComponent<InGameNodeData>();
+            inGameNodeData.transform.localScale = new Vector3(0.1f, 0.1f);
+            inGameNodeData.NodeDeviceInfo = deviceInfo;
+            inGameNodeData.EndNodeID = inGameData.path[deviceInfo.GetDeviceId()].end;
+            StartCoroutine(Tween.TweenRigidbody2D.MoveData(inGameNodeData.GetComponent<Rigidbody2D>(), startPos, endPos, 1f, inGameNodeData.GetBoxCollider2D()));
+
+            yield return new WaitForSeconds(2f);
+        }
     }
 }
