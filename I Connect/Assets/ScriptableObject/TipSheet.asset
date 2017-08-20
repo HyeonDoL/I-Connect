@@ -12,13 +12,26 @@ MonoBehaviour:
   m_Name: TipSheet
   m_EditorClassIdentifier: 
   m_data:
-  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - TipText: "In communication networks, a NODE is either a redistribution point or
+      a communication endpoint.  A physical network node is an active electronic device
+      that is attached to a network, and is capable of creating, receiving, or transmitting
+      information over a communications channel.\r"
+    tip: {fileID: 21300000, guid: 4efcd33264caf0d4d847f9e3dd53758a, type: 3}
+  - TipText: 
+    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - TipText: 
+    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - TipText: 
+    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - TipText: 
+    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - TipText: 
+    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - TipText: 
+    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - TipText: 
+    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - TipText: 
+    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+  - TipText: 
+    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}

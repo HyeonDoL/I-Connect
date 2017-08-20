@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deviceType: 3
+  Displayer: {fileID: 0}
 --- !u!114 &114727010151939030
 MonoBehaviour:
   m_ObjectHideFlags: 1
