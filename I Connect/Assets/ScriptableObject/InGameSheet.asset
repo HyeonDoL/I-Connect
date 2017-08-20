@@ -55,7 +55,7 @@ MonoBehaviour:
       end: 1
     - start: 1
       end: 0
-  - maxComplete: 2
+  - maxComplete: 3
     checkMenu:
       connection:
         isUse: 1

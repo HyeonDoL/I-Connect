@@ -11,7 +11,7 @@ public class StageControl : MonoBehaviour
 
         Time.timeScale = 1;
 
-        SceneChanger.Instance.ChangeScene(SceneType.InGame);
+        SceneChanger.Instance.ChangeScene(SceneType.InGame, true);
     }
 
     public void SelectStage(int lv)
@@ -25,7 +25,7 @@ public class StageControl : MonoBehaviour
     {
         GameManager.Instance.StageLv = GameManager.Instance.StageLv + 1;
 
-        SceneChanger.Instance.ChangeScene(SceneType.InGame);
+        SceneChanger.Instance.ChangeScene(SceneType.InGame, true);
     }
 
     public void ReturnMenu()
@@ -34,7 +34,7 @@ public class StageControl : MonoBehaviour
 
         Time.timeScale = 1;
 
-        SceneChanger.Instance.ChangeScene(SceneType.Menu);
+        SceneChanger.Instance.ChangeScene(SceneType.Menu, true);
     }
 
     public void Pause()

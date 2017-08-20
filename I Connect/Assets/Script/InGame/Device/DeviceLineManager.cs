@@ -128,6 +128,8 @@ public class DeviceLineManager : MonoBehaviour
                 connectParticle.transform.position = hit.transform.position;
 
                 connectParticle.Play();
+
+                //AudioManager.Instance.DoMyBestPlay(AudioManager.AudioClipIndex.connect);
             }
         }
         else

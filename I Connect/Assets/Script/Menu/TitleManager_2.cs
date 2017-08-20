@@ -23,6 +23,8 @@ public class TitleManager_2 : MonoBehaviour
     private void Awake()
     {
         StartCoroutine(StartTitle());
+
+        AudioManager.Instance.DoMyBestPlay(AudioManager.AudioClipIndex.Figuring_it_All_Out);
     }
 
     public IEnumerator StartTitle()
