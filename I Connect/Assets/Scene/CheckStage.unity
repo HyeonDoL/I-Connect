@@ -408,12 +408,12 @@ Prefab:
     - target: {fileID: 224456183326915714, guid: 0ee9687f642c37147961bca59ef9e51b,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 224456183326915714, guid: 0ee9687f642c37147961bca59ef9e51b,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 300
+      value: 401
       objectReference: {fileID: 0}
     - target: {fileID: 224456183326915714, guid: 0ee9687f642c37147961bca59ef9e51b,
         type: 2}
@@ -470,20 +470,7 @@ Prefab:
       propertyPath: UsingImages.Array.data[2]
       value: 
       objectReference: {fileID: 11895756}
-    - target: {fileID: 114476815153375728, guid: 0ee9687f642c37147961bca59ef9e51b,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: bd0c0db96ef3e8e4ebf13365f020a11a,
-        type: 3}
-    - target: {fileID: 114648115564281856, guid: 0ee9687f642c37147961bca59ef9e51b,
-        type: 2}
-      propertyPath: Tests.Array.data[0].Sprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 892ea9926670cf144bd18fb8b609d737,
-        type: 3}
-    m_RemovedComponents:
-    - {fileID: 114507630661115380, guid: 0ee9687f642c37147961bca59ef9e51b, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ee9687f642c37147961bca59ef9e51b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &738920973

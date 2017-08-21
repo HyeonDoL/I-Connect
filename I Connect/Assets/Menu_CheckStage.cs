@@ -74,6 +74,7 @@ public class Menu_CheckStage : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 
         isGoTarget = false;
         StageIndex = GameManager.Instance.StageLv - 1;
+
         StageIndex = 0;
         for (int i=1;i<3;++i)
         {
@@ -86,6 +87,7 @@ public class Menu_CheckStage : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     {
         StartCoroutine(GoTargetPosition());
         UsingImages[0].sprite = Tests[StageIndex].Sprites[0];
+        UsingImages[0].GetComponent<RectTransform>().sizeDelta = new Vector2(Tests[StageIndex].Sprites[0].rect.width, Tests[StageIndex].Sprites[0].rect.height);
     }
 
     private IEnumerator GoTargetPosition()
