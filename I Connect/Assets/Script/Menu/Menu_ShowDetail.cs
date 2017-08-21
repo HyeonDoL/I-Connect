@@ -185,7 +185,7 @@ public class Menu_ShowDetail : MonoBehaviour, IDragHandler, IPointerUpHandler, I
                 int.TryParse(hit.transform.gameObject.name, out lv);
 
                 GameManager.Instance.StageLv = lv;
-
+                Debug.Log("LV : " +lv);
                 SceneChanger.Instance.ChangeScene(SceneType.InGame);
             }
         }

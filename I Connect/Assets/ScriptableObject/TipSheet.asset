@@ -16,22 +16,44 @@ MonoBehaviour:
       a communication endpoint.  A physical network node is an active electronic device
       that is attached to a network, and is capable of creating, receiving, or transmitting
       information over a communications channel.\r"
-    tip: {fileID: 21300000, guid: 4efcd33264caf0d4d847f9e3dd53758a, type: 3}
-  - TipText: 
-    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - TipText: 
-    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - TipText: 
-    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - TipText: 
-    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - TipText: 
-    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - TipText: 
-    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - TipText: 
-    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - TipText: 
-    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
-  - TipText: 
-    tip: {fileID: 21300000, guid: d7dd4be97ad969944b173818f3a4570e, type: 3}
+    tip: {fileID: 21300000, guid: 6006e50db67b8ad43a7b90dde44dbf08, type: 3}
+  - TipText: "A\_router\_is a\_networking device\_that forwards\_data packets\_between\_computer
+      networks. Routers perform the traffic directing functions on the\_Internet.
+      A data packet is typically\_forwarded\_from one router to another router through
+      the networks that constitute an\_internetwork\_until it reaches its destination\_node.\r\n"
+    tip: {fileID: 21300000, guid: 094a1a5645906f24f934952ef8f799dc, type: 3}
+  - TipText: "In the late 1950s, early networks of computers included the military
+      radar system Semi-Automatic Ground Environment (SAGE).\r\nIn 1959, Anatolii
+      Ivanovich Kitov proposed to the Central Committee of the Communist Party of
+      the Soviet Union a detailed plan for the re-organisation of the control of the
+      Soviet armed forces and of the Soviet economy on the basis of a network of computing
+      centres.\r\n"
+    tip: {fileID: 21300000, guid: d7a5ae8e703e42148b9736f1e22c4b4a, type: 3}
+  - TipText: "In 1960, the commercial airline reservation system semi-automatic business
+      research environment (SABRE) went online with two connected mainframes.\r\nIn
+      1962, J.C.R. Licklider developed a working group he called the \"Intergalactic
+      Computer Network\", a precursor to the ARPANET, at the Advanced Research Projects
+      Agency (ARPA).\r\nIn 1964, researchers at Dartmouth College developed the Dartmouth
+      Time Sharing System for distributed users of large computer systems. The same
+      year, at Massachusetts Institute of Technology, a research group supported by
+      General Electric and Bell Labs used a computer to route and manage telephone
+      connections.\r\n"
+    tip: {fileID: 21300000, guid: d7a5ae8e703e42148b9736f1e22c4b4a, type: 3}
+  - TipText: "In 1965, Thomas Marill and Lawrence G. Roberts created the first wide
+      area network (WAN). This was an immediate precursor to the ARPANET, of which
+      Roberts became program manager.\r\nAlso in 1965, Western Electric introduced
+      the first widely used telephone switch that implemented true computer control.\r\nIn
+      1969, the University of California at Los Angeles, the Stanford Research Institute,
+      the University of California at Santa Barbara, and the University of Utah became
+      connected as the beginning of the ARPANET network using 50 kbit/s circuits.\r\nIn
+      1972, commercial services using X.25 were deployed, and later used as an underlying
+      infrastructure for expanding TCP/IP networks.\r\n"
+    tip: {fileID: 21300000, guid: d7a5ae8e703e42148b9736f1e22c4b4a, type: 3}
+  - TipText: "\rIn 1973, Robert Metcalfe wrote a formal memo at Xerox PARC describing
+      Ethernet, a networking system that was based on the Aloha network, developed
+      in the 1960s by Norman Abramson and colleagues at the University of Hawaii.
+      In July 1976, Robert Metcalfe and David Boggs published their paper \"Ethernet:
+      Distributed Packet Switching for Local Computer Networks\" and collaborated
+      on several patents received in 1977 and 1978. In 1979, Robert Metcalfe pursued
+      making Ethernet an open standard.\r\n"
+    tip: {fileID: 21300000, guid: d7a5ae8e703e42148b9736f1e22c4b4a, type: 3}
