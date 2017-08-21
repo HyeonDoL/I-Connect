@@ -44,7 +44,9 @@ public class MeshLineManager : MonoBehaviour
     {
         UIMeshLine meshLine2 = ObjectPoolManager.Instance.GetObject(ObjectPoolType.Line, Vector3.zero).GetComponent<UIMeshLine>();
         DisConnect disConnect = ObjectPoolManager.Instance.GetObject(ObjectPoolType.DisConnectButton, Vector3.zero).GetComponent<DisConnect>();
- 
+
+        disConnect.GetComponent<RectTransform>().localScale = Vector3.one;
+
         meshLine1.lengthRatio = 1f;
         meshLine2.lengthRatio = 1f;
 
@@ -70,6 +72,8 @@ public class MeshLineManager : MonoBehaviour
         UIMeshLine meshLine2 = ObjectPoolManager.Instance.GetObject(ObjectPoolType.Line, Vector3.zero).GetComponent<UIMeshLine>();
         DisConnect disConnect = ObjectPoolManager.Instance.GetObject(ObjectPoolType.DisConnectButton, Vector3.zero).GetComponent<DisConnect>();
 
+        disConnect.GetComponent<RectTransform>().localScale = Vector3.one;
+
         meshLine1.lengthRatio = 1f;
         meshLine2.lengthRatio = 1f;
 
@@ -90,7 +94,6 @@ public class MeshLineManager : MonoBehaviour
         disConnect.SetTargetDeviceInfo(targetDeviceInfo);
         disConnect.SetThisDeviceInfo(thisDeviceInfo);
 
-        disConnect.GetComponent<RectTransform>().localScale = new Vector2(80, 80);
         disConnect.GetComponent<RectTransform>().anchoredPosition = centerPoint;
     }
 
@@ -98,6 +101,8 @@ public class MeshLineManager : MonoBehaviour
     {
         UIMeshLine meshLine2 = ObjectPoolManager.Instance.GetObject(ObjectPoolType.Line, Vector3.zero).GetComponent<UIMeshLine>();
         DisConnect disConnect = ObjectPoolManager.Instance.GetObject(ObjectPoolType.DisConnectButton, Vector3.zero).GetComponent<DisConnect>();
+
+        disConnect.GetComponent<RectTransform>().localScale = Vector3.one;
 
         meshLine1.lengthRatio = 1f;
         meshLine2.lengthRatio = 1f;
@@ -121,7 +126,6 @@ public class MeshLineManager : MonoBehaviour
         disConnect.SetTargetDeviceInfo(targetDeviceInfo);
         disConnect.SetThisDeviceInfo(thisDeviceInfo);
 
-        disConnect.GetComponent<RectTransform>().localScale = new Vector2(80, 80);
         disConnect.GetComponent<RectTransform>().anchoredPosition = centerPoint;
     }
 }

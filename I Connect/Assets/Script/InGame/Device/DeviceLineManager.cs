@@ -157,6 +157,8 @@ public class DeviceLineManager : MonoBehaviour
 
     private IEnumerator TransmitData(Vector2 startPos, Vector2 endPos, DeviceInfo deviceInfo)
     {
+        Debug.Log(IsConnected);
+
         while (IsConnected)
         {
             InGameNodeData inGameNodeData = ObjectPoolManager.Instance.GetObject(ObjectPoolType.Data, startPos).GetComponent<InGameNodeData>();

@@ -76,6 +76,7 @@ public class ObjectPoolManager : MonoBehaviour
 
             for (int count2 = 0; count2 < poolCount; ++count2)
             {
+                   
                 GameObject clone = Instantiate(objectPool.Prefab);
                 clone.SetActive(false);
                 clone.name = infoList[count].type.ToString();
@@ -91,7 +92,7 @@ public class ObjectPoolManager : MonoBehaviour
 
         for (int i = 0; i < connectors.Count; i++)
         {
-            if (connectors[i].transform.parent.gameObject.active)
+            if (connectors[i].transform.parent.gameObject.activeSelf)
                 connectors[i].Connect();
         }
     }

@@ -157,7 +157,7 @@ public class Menu_CheckStage : MonoBehaviour, IDragHandler, IPointerUpHandler, I
                 
                 GameManager.Instance.SetStageClear(StageIndex, hit.transform.gameObject.name.Equals(Tests[StageIndex].correctAnswer.ToString()));
 
-                SceneChanger.Instance.ChangeScene(SceneType.Menu);
+                SceneChanger.Instance.ChangeScene(SceneChanger.Instance.SceneName);
             }
         }
         else

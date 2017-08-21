@@ -14,6 +14,8 @@ public class DisConnect : MonoBehaviour
     private UIMeshLine meshLine;
     private UIMeshLine duplicationMeshLine;
 
+    private bool isDisConnect;
+
     public void SetDeviceLineManager(DeviceLineManager deviceLineManager)
     {
         this.deviceLineManager = deviceLineManager;
@@ -37,9 +39,15 @@ public class DisConnect : MonoBehaviour
         targetDeviceInfo = device;
     }
 
+    private void OnDisable()
+    {
+        isDisConnect = false;
+    }
+
     public void PlayDisConnect()
     {
-        disConnectAni.SetTrigger("DIsConnect");
+        if(!isDisConnect)
+            disConnectAni.SetTrigger("DisConnect");
     }
 
     public void DisConnecting()
@@ -62,6 +70,8 @@ public class DisConnect : MonoBehaviour
         }
 
         AudioManager.Instance.DoMyBestPlay(AudioManager.AudioClipIndex.Disconnect);
+
+        isDisConnect = true;
     }
 
     public void Free()

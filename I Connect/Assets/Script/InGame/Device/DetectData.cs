@@ -30,8 +30,6 @@ public class DetectData : MonoBehaviour
             currentData = collision.GetComponent<InGameNodeData>();
             currentDeviceList = currentData.NodeDeviceInfo.ConnectedDeviceList();
 
-            Debug.Log("Connect");
-
             if (ConnectData())
                 return;
 
@@ -46,17 +44,14 @@ public class DetectData : MonoBehaviour
             if (!isConnected)
                 deviceList.Add(currentData.NodeDeviceInfo.GetDeviceData());
 
-            Debug.Log("Connected Such EndNode");
 
             if (ConnectedSuchEndNode())
                 return;
 
-            Debug.Log("Connected Such Device");
 
             if (ConnectedSuchDevice())
                 return;
 
-            Debug.Log("Delete");
 
             currentData.DeleteNode();
         }

@@ -40,11 +40,11 @@ public class ConnectDisplayer : MonoBehaviour
     void Awake()
     {
         myDeviceInfo = this.transform.parent.GetComponent<LimitMaxLine>();
-        myDeviceInfo.Displayer = this;
+        //myDeviceInfo.Displayer = this;
 
         MaxConnection = SokectImages.Length-1;
         ConnectIndexer = 0;
-
+        Debug.Log("ConnectIndexer :" + ConnectIndexer);
         for (int i = 0; i < DisplayContainers.Length; ++i)
             SetActiveChilds(DisplayContainers[i], false);
         SetActiveChilds(DisplayContainers[(int)myType], true);
