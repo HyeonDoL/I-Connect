@@ -27,17 +27,31 @@ public class SelectElement : MonoBehaviour
     [SerializeField]
     private RectTransform disConnectGroup;
 
+    [SerializeField]
+    private InGameSheet inGameSheet;
+
+    private int switchCount;
+
+    private int routerCount;
+
     private bool[] isCanUse;
 
     private SelectSpawnType spawnType;
 
     private RectTransform[] elements;
 
+    private InGameData inGameData;
+
     private void Awake()
     {
         elements = sortMenu.GetElementsTrans();
 
         isCanUse = sortMenu.IsCanUse();
+
+        inGameData = inGameSheet.m_data[GameManager.Instance.StageLv - 1];
+
+        switchCount = 0;
+        routerCount = 0;
     }
 
     public void ClickConnection()
@@ -179,9 +193,17 @@ public class SelectElement : MonoBehaviour
 
                 if(hit.transform != null)
                 {
-                    if((hit.transform.name == "Switch" && spawnType == SelectSpawnType.Switch) ||
-                        (hit.transform.name == "Router" && spawnType == SelectSpawnType.Router))
+                    if(hit.transform.name == "Switch" && spawnType == SelectSpawnType.Switch)
                     {
+                        switchCount -= 1;
+
+                        StartCoroutine(Free(hit.transform));
+                    }
+
+                    else if (hit.transform.name == "Router" && spawnType == SelectSpawnType.Router)
+                    {
+                        routerCount -= 1;
+
                         StartCoroutine(Free(hit.transform));
                     }
                 }
@@ -191,8 +213,25 @@ public class SelectElement : MonoBehaviour
                     if (InGameManager.Instance.isClickButton)
                         return;
 
-                    if (spawnType != SelectSpawnType.None)
-                        Spawn(spawnType);
+                    if (spawnType == SelectSpawnType.Switch)
+                    {
+                        if (switchCount >= inGameData.checkMenu._switch.useCount)
+                            return;
+
+                        switchCount++;
+
+                        Spawn(SelectSpawnType.Switch);
+                    }
+
+                    else if(spawnType == SelectSpawnType.Router)
+                    {
+                        if (routerCount >= inGameData.checkMenu.router.useCount)
+                            return;
+
+                        switchCount++;
+
+                        Spawn(SelectSpawnType.Router);
+                    }
                 }
             }
 
