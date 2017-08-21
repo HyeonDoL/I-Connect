@@ -9,18 +9,17 @@ public class DetectData : MonoBehaviour
 
     private List<DeviceData> deviceList;
 
+    private int currentId;
+
     private Transform currentTrans;
     private Rigidbody2D currentRigid;
     private InGameNodeData currentData;
-    private List<DeviceData> currentDeviceList;
-
-    private bool isConnected;
-
-    public bool test = false;
 
     private void Awake()
     {
         deviceList = deviceInfo.ConnectedDeviceList();
+
+        currentId = 100;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,21 +29,13 @@ public class DetectData : MonoBehaviour
             currentTrans = collision.transform;
             currentRigid = collision.GetComponent<Rigidbody2D>();
             currentData = collision.GetComponent<InGameNodeData>();
-            currentDeviceList = currentData.NodeDeviceInfo.ConnectedDeviceList();
+
+            if(currentId == currentData.NodeDeviceInfo.GetDeviceData().id)
+                currentData.DeleteNode();
+
 
             if (ConnectData())
                 return;
-
-            isConnected = false;
-
-            for (int i = 0; i < deviceList.Count; i++)
-            {
-                if (deviceList[i].id == currentData.NodeDeviceInfo.GetDeviceId())
-                    isConnected = true;
-            }
-
-            if (!isConnected)
-                deviceList.Add(currentData.NodeDeviceInfo.GetDeviceData());
 
 
             if (ConnectedSuchEndNode())
@@ -61,9 +52,10 @@ public class DetectData : MonoBehaviour
 
     private bool ConnectData()
     {
-        if (deviceInfo.GetDeviceId() == currentData.EndNodeID && deviceList.Count == 0)
+        if (deviceInfo.GetDeviceId() == currentData.EndNodeID &&
+            currentId != currentData.NodeDeviceInfo.GetDeviceId())
         {
-            deviceList.Add(currentData.NodeDeviceInfo.GetDeviceData());
+            currentId = currentData.NodeDeviceInfo.GetDeviceId();
 
             currentData.DeleteNode();
 
@@ -107,20 +99,5 @@ public class DetectData : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         StartCoroutine(Tween.TweenRigidbody2D.MoveData(currentRigid, this.transform.position, nextDevicePosition, 0.8f, currentData.GetBoxCollider2D()));
-    }
-
-    private void Update()
-    {
-        if(test)
-        {
-            test = false;
-
-            Debug.Log("-------------" + this.transform.name + "----------------");
-
-            for(int i = 0; i < deviceList.Count; i++)
-            {
-                Debug.Log(i + " : " + deviceList[i]);
-            }
-        }
     }
 }

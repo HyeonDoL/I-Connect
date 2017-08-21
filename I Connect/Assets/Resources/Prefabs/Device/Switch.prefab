@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deviceInfo: {fileID: 114282820138229838}
+  test: 0
 --- !u!114 &114747464525874328
 MonoBehaviour:
   m_ObjectHideFlags: 1

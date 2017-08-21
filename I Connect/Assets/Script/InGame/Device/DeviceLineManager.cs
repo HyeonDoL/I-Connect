@@ -121,7 +121,11 @@ public class DeviceLineManager : MonoBehaviour
 
                 MeshLineManager.Instance.Connect(line, deviceInfo, targetDeviceInfo, this);
 
-                if(deviceInfo.GetDeviceType() == DeviceType.EndDevice)
+                deviceInfo.ConnectedDeviceList().Add(targetDeviceInfo.GetDeviceData());
+
+                targetDeviceInfo.ConnectedDeviceList().Add(deviceInfo.GetDeviceData());
+
+                if (deviceInfo.GetDeviceType() == DeviceType.EndDevice)
                     StartCoroutine(TransmitData(this.transform.position, hit.transform.position, deviceInfo));
 
                 if (targetDeviceInfo.GetDeviceType() == DeviceType.EndDevice)
@@ -133,6 +137,8 @@ public class DeviceLineManager : MonoBehaviour
 
                 AudioManager.Instance.DoMyBestPlay(AudioManager.AudioClipIndex.connect);
             }
+            else
+                MeshLineManager.Instance.Clear(line);
         }
         else
         {
@@ -157,8 +163,6 @@ public class DeviceLineManager : MonoBehaviour
 
     private IEnumerator TransmitData(Vector2 startPos, Vector2 endPos, DeviceInfo deviceInfo)
     {
-        Debug.Log(IsConnected);
-
         while (IsConnected)
         {
             InGameNodeData inGameNodeData = ObjectPoolManager.Instance.GetObject(ObjectPoolType.Data, startPos).GetComponent<InGameNodeData>();

@@ -44,6 +44,9 @@ public class DeviceConnector : MonoBehaviour
 
         MeshLineManager.Instance.Connect(line, deviceInfo1, deviceInfo2);
 
+        deviceInfo1.ConnectedDeviceList().Add(deviceInfo2.GetDeviceData());
+        deviceInfo2.ConnectedDeviceList().Add(deviceInfo1.GetDeviceData());
+
         if (deviceInfo1.GetDeviceType() == DeviceType.EndDevice)
             StartCoroutine(TransmitData(deviceInfo1.gameObject.transform.position, deviceInfo2.gameObject.transform.position, deviceInfo1));
 

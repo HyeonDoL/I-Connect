@@ -39,6 +39,11 @@ public class DisConnect : MonoBehaviour
         targetDeviceInfo = device;
     }
 
+    private void Awake()
+    {
+        isDisConnect = true;
+    }
+
     private void OnDisable()
     {
         isDisConnect = true;
@@ -46,7 +51,7 @@ public class DisConnect : MonoBehaviour
 
     public void PlayDisConnect()
     {
-        if(isDisConnect)
+        if (isDisConnect)
         {
             isDisConnect = false;
 
