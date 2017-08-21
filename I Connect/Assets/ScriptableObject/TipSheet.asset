@@ -57,3 +57,11 @@ MonoBehaviour:
       on several patents received in 1977 and 1978. In 1979, Robert Metcalfe pursued
       making Ethernet an open standard.\r\n"
     tip: {fileID: 21300000, guid: d7a5ae8e703e42148b9736f1e22c4b4a, type: 3}
+  - TipText: "\rIn 1973, Robert Metcalfe wrote a formal memo at Xerox PARC describing
+      Ethernet, a networking system that was based on the Aloha network, developed
+      in the 1960s by Norman Abramson and colleagues at the University of Hawaii.
+      In July 1976, Robert Metcalfe and David Boggs published their paper \"Ethernet:
+      Distributed Packet Switching for Local Computer Networks\" and collaborated
+      on several patents received in 1977 and 1978. In 1979, Robert Metcalfe pursued
+      making Ethernet an open standard.\r\n"
+    tip: {fileID: 21300000, guid: d7a5ae8e703e42148b9736f1e22c4b4a, type: 3}
