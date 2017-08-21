@@ -9,6 +9,8 @@ public class InGameNodeData : MonoBehaviour
     [SerializeField]
     private BoxCollider2D boxCollider2D;
 
+    private bool isPool = false;
+
     public int EndNodeID { get; set; }
 
     public void DeleteNode()

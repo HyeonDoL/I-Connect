@@ -186,7 +186,7 @@ public static class Tween
 
             Vector2 position;
 
-            while (t < 1f)
+            while (t < 1f && rigidbody.gameObject.activeInHierarchy)
             {
                 t += Time.deltaTime / time;
 

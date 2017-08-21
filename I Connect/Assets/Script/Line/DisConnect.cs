@@ -41,13 +41,17 @@ public class DisConnect : MonoBehaviour
 
     private void OnDisable()
     {
-        isDisConnect = false;
+        isDisConnect = true;
     }
 
     public void PlayDisConnect()
     {
-        if(!isDisConnect)
+        if(isDisConnect)
+        {
+            isDisConnect = false;
+
             disConnectAni.SetTrigger("DisConnect");
+        }
     }
 
     public void DisConnecting()
@@ -70,8 +74,6 @@ public class DisConnect : MonoBehaviour
         }
 
         AudioManager.Instance.DoMyBestPlay(AudioManager.AudioClipIndex.Disconnect);
-
-        isDisConnect = true;
     }
 
     public void Free()
