@@ -29,4 +29,12 @@ public class InGameNodeData : MonoBehaviour
     {
         return boxCollider2D;
     }
+
+    private void OnDisable()
+    {
+        Material material = render.material;
+        material.color = new Color(material.color.r, material.color.g, material.color.b, 1f);
+
+        boxCollider2D.enabled = false;
+    }
 }

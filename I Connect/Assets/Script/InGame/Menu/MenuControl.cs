@@ -21,6 +21,8 @@ public class MenuControl : MonoBehaviour
     private void Awake()
     {
         isOpen = false;
+
+        AudioManager.Instance.DoMyBestPlay(AudioManager.AudioClipIndex.Quiet_Night_at_the_Shack);
     }
 
     public void Toggle()

@@ -194,7 +194,7 @@ public static class Tween
 
                 rigidbody.MovePosition(position);
 
-                if (t >= 0.5f)
+                if (t >= 0.8f)
                     boxCollider2D.enabled = true;
 
                 yield return null;

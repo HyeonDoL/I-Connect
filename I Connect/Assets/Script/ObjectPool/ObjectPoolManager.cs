@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum ObjectPoolType
@@ -43,6 +44,9 @@ public class ObjectPoolManager : MonoBehaviour
     [SerializeField]
     private Hashtable objectPoolList = new Hashtable();
 
+    [SerializeField]
+    private List<DeviceConnector> connectors = new List<DeviceConnector>();
+
     private void Awake()
     {
         instance = this;
@@ -72,6 +76,7 @@ public class ObjectPoolManager : MonoBehaviour
 
             for (int count2 = 0; count2 < poolCount; ++count2)
             {
+                   
                 GameObject clone = Instantiate(objectPool.Prefab);
                 clone.SetActive(false);
                 clone.name = infoList[count].type.ToString();
@@ -83,6 +88,12 @@ public class ObjectPoolManager : MonoBehaviour
             }
 
             objectPool.MaxCount = count;
+        }
+
+        for (int i = 0; i < connectors.Count; i++)
+        {
+            if (connectors[i].transform.parent.gameObject.activeSelf)
+                connectors[i].Connect();
         }
     }
 
