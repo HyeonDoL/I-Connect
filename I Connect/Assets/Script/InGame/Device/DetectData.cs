@@ -11,10 +11,6 @@ public class DetectData : MonoBehaviour
 
     private int currentId;
 
-    private Transform currentTrans;
-    private Rigidbody2D currentRigid;
-    private InGameNodeData currentData;
-
     private void Awake()
     {
         deviceList = deviceInfo.ConnectedDeviceList();
@@ -26,75 +22,50 @@ public class DetectData : MonoBehaviour
     {
         if (collision.CompareTag("Data"))
         {
-            currentTrans = collision.transform;
-            currentRigid = collision.GetComponent<Rigidbody2D>();
-            currentData = collision.GetComponent<InGameNodeData>();
+            Rigidbody2D currentRigid = collision.GetComponent<Rigidbody2D>();
+            InGameNodeData currentData = collision.GetComponent<InGameNodeData>();
 
-            if(currentId == currentData.NodeDeviceInfo.GetDeviceData().id)
+            if (currentId == currentData.NodeDeviceInfo.GetDeviceData().id)
+            {
+                currentData.DeleteNode();
+                return;
+            }
+
+            if (deviceInfo.GetDeviceId() == currentData.EndNodeID &&
+                    currentId != currentData.NodeDeviceInfo.GetDeviceId())
+            {
+                currentId = currentData.NodeDeviceInfo.GetDeviceId();
+
                 currentData.DeleteNode();
 
+                InGameManager.Instance.Complete();
 
-            if (ConnectData())
                 return;
+            }
 
+            for (int i = 0; i < deviceList.Count; i++)
+            {
+                if (deviceList[i].id == currentData.EndNodeID)
+                {
+                    StartCoroutine(TransmitNextDevice(currentRigid, deviceList[i].trans.position, currentData));
+                    return;
+                }
+            }
 
-            if (ConnectedSuchEndNode())
-                return;
-
-
-            if (ConnectedSuchDevice())
-                return;
-
+            for (int i = 0; i < deviceList.Count; i++)
+            {
+                if (deviceList[i].type != DeviceType.EndDevice)
+                {
+                    StartCoroutine(TransmitNextDevice(currentRigid, deviceList[i].trans.position, currentData));
+                    return;
+                }
+            }
 
             currentData.DeleteNode();
         }
     }
 
-    private bool ConnectData()
-    {
-        if (deviceInfo.GetDeviceId() == currentData.EndNodeID &&
-            currentId != currentData.NodeDeviceInfo.GetDeviceId())
-        {
-            currentId = currentData.NodeDeviceInfo.GetDeviceId();
-
-            currentData.DeleteNode();
-
-            InGameManager.Instance.Complete();
-
-            return true;
-        }
-
-        return false;
-    }
-
-    private bool ConnectedSuchEndNode()
-    {
-        for (int i = 0; i < deviceList.Count; i++)
-        {
-            if (deviceList[i].id == currentData.EndNodeID)
-            {
-                StartCoroutine(TransmitNextDevice(deviceList[i].trans.position));
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private bool ConnectedSuchDevice()
-    {
-        for (int i = 0; i < deviceList.Count; i++)
-        {
-            if (deviceList[i].type != DeviceType.EndDevice)
-            {
-                StartCoroutine(TransmitNextDevice(deviceList[i].trans.position));
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private IEnumerator TransmitNextDevice(Vector2 nextDevicePosition)
+    private IEnumerator TransmitNextDevice(Rigidbody2D currentRigid, Vector2 nextDevicePosition, InGameNodeData currentData)
     {
         yield return new WaitForSeconds(0.5f);
 

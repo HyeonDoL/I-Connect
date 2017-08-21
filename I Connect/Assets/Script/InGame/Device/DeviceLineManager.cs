@@ -169,7 +169,7 @@ public class DeviceLineManager : MonoBehaviour
             inGameNodeData.transform.localScale = new Vector3(0.1f, 0.1f);
             inGameNodeData.NodeDeviceInfo = deviceInfo;
             inGameNodeData.EndNodeID = inGameData.path[deviceInfo.GetDeviceId()].end;
-            StartCoroutine(Tween.TweenRigidbody2D.MoveData(inGameNodeData.GetComponent<Rigidbody2D>(), startPos, endPos, 1f, inGameNodeData.GetBoxCollider2D()));
+            StartCoroutine(Tween.TweenRigidbody2D.MoveData(inGameNodeData.GetComponent<Rigidbody2D>(), startPos, endPos, 0.8f, inGameNodeData.GetBoxCollider2D()));
 
             yield return new WaitForSeconds(2f);
         }
