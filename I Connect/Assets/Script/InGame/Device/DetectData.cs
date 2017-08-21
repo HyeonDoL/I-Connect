@@ -119,7 +119,7 @@ public class DetectData : MonoBehaviour
 
             for(int i = 0; i < deviceList.Count; i++)
             {
-                Debug.Log(i + " : " + deviceList[i]);
+                Debug.Log(i + " : " + deviceList[i].trans.name);
             }
         }
     }

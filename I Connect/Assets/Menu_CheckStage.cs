@@ -74,8 +74,7 @@ public class Menu_CheckStage : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 
         isGoTarget = false;
         StageIndex = GameManager.Instance.StageLv - 1;
-
-        StageIndex = 0;
+        
         for (int i=1;i<3;++i)
         {
             UsingImages[i].sprite = Tests[StageIndex].Sprites[i];
@@ -106,6 +105,7 @@ public class Menu_CheckStage : MonoBehaviour, IDragHandler, IPointerUpHandler, I
             GoTimer += accuracy;
             yield return new WaitForSeconds(accuracy);
         }
+
         for (int i = 0; i < Stages.Length; ++i)
         {
             Stages[i].Stage.localPosition = Stages[i].TargetPosition;
